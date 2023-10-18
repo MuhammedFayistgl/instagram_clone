@@ -1,6 +1,6 @@
 
 export interface Storytype {
-    id: number; URL: string; USER_NAME: string; IMG_URL: string
+    id: number; URL: string; USER_NAME: string; FEED_URL: [string]
     comments: {
         COMMENT_USER_NAME: string
         URL: string

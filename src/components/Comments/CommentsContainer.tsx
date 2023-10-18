@@ -9,8 +9,8 @@ const CommentsContainer = () => {
     return (
         <div>
             <div className=' '>
-                <div className=' flex justify-center flex-col items-center'>
-                    <CgLoadbar className={'text-3xl  '} />
+                <div className=' flex justify-center  flex-col items-center'>
+                    <CgLoadbar className={'text-lg  '} />
                     <div className=''>
                         Comments
                     </div>
