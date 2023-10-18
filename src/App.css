@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.category-inner-circle {
+	width: 95px;
+	height: 95px;
+	background: #2196f3;
+	border-radius: 50%;
+	border: 4px solid white;
+}
+
+.category-outer-circle {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background-image: linear-gradient(
+		253.4deg,
+		rgba(64, 93, 230, 0.8) 31.1%,
+		rgba(147, 60, 219, 0.79) 51.28%,
+		rgba(193, 53, 132, 0.81) 69.63%,
+		rgba(253, 29, 29, 0.83) 86.15%
+	);
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+}
+.custom-loader {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	padding: 1px;
+	background: conic-gradient(#0000 10%, #766df4) content-box;
+	-webkit-mask: repeating-conic-gradient(#0000 0deg, #000 1deg 20deg, #0000 21deg 36deg),
+		radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 calc(100% - 8px));
+	-webkit-mask-composite: destination-in;
+	mask-composite: intersect;
+	animation: s4 1s infinite steps(10);
+}
+@keyframes s4 {
+	to {
+		transform: rotate(1turn);
+	}
+}
+
+
+.swiper-pagination-bullets {
+    display: none;
+}
+
