@@ -1,46 +1,40 @@
-import { Card, CardActions, IconButton } from "@mui/material";
 import { USER } from "../../Data/Data";
-import CardMedia from "@mui/material/CardMedia";
 import { FiSend } from "react-icons/fi";
 import { BsBookmark } from "react-icons/bs";
 import { FaRegCommentDots } from "react-icons/fa";
-
+import { ButtonToolbar, Panel, Stack } from 'rsuite';
 import Like from "./Feed_Fun/ThumbButton";
 import CommentsContainer from "../Comments/CommentsContainer";
 import { useState } from "react";
 const Feed = () => {
 	const [commentToggler, setcommentToggler] = useState<boolean>(false)
+
+
 	return (
 		<div className="flex flex-col items-center pt-5">
-			{USER.flatMap(o => o.FEED_URL.map((itm, i) => {
+			{USER.flatMap(o => o.FEED_URL.map((itm,i) => {
 				return (
-					<Card className="mb-2" sx={{ width: '75%' }}>
-						<CardMedia
+					<Panel className="mb-2" style={{ width: '75%' }}>
+						<img
 							key={i}
-							component="img"
-							// height="194"
-							image={itm}
+							width="100%"
+							src={itm}
 							alt="Paella dish"
 						/>
-						<CardActions disableSpacing>
-							<div className="mb-3">
+						<Stack className="">
+							<div className="">
 								<Like />
 							</div>
-
-							<IconButton aria-label="share">
-								<FiSend />
-							</IconButton>
-							<IconButton onClick={() => setcommentToggler(!commentToggler)}>
-								<FaRegCommentDots />
-							</IconButton>
-							<IconButton>
-								<BsBookmark />
-							</IconButton>
+							<ButtonToolbar className="pt-3">
+								<span className="text-lg"><FiSend /></span>
+								<span className="text-lg">	<FaRegCommentDots onClick={() => setcommentToggler(!commentToggler)} /></span>
+								<span className="text-lg"><BsBookmark /></span>
+							</ButtonToolbar>
 							{/* Comments */}
-						</CardActions>
+						</Stack>
 						{commentToggler && <CommentsContainer />}
 
-					</Card>
+					</Panel>
 				)
 			}))}
 

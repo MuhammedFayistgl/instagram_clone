@@ -4,7 +4,7 @@ import { Rate } from 'rsuite'
 const Like = () => {
     const [Like, setlike] = useState(0)
     return (
-        <Rate max={1} size='sm' color='red' value={Like} character="❤" onChange={setlike} />
+        <Rate max={1} size={'xs'} color='red' value={Like} character="❤" onChange={setlike} />
     )
 }
 
