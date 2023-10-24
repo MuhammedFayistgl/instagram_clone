@@ -6,11 +6,12 @@ import Dropdown from "./Dropdown/Dropdown";
 import { useDispatch, useSelector } from "react-redux";
 import { setTheme } from "../../redux/ThemeSlice";
 import { RootState } from "../../types/Type";
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
 
-	const  value  = useSelector((state:RootState) => state.theme.value)
+	const value = useSelector((state: RootState) => state.theme.value)
 	const Dispatch = useDispatch()
 
 	return (
@@ -29,11 +30,9 @@ const Header = () => {
 						className={"text-2xl"} />
 				</span>
 			}
-
-
-
-
-			<RiMessengerFill className={"text-2xl"} />
+			<Link to={'/chat'}>
+				<RiMessengerFill className={"text-2xl"} />
+			</Link>
 		</div>
 	);
 };

@@ -1,11 +1,12 @@
 import { Avatar } from '@mui/material'
-import React from 'react'
+
+import { ProfilePropsType } from '../../types/Type'
 // import { Avatar } from 'rsuite'
 
-const Profile = () => {
+const Profile = ({Profil_Url ,alt}: ProfilePropsType) => {
     return (
         <>
-            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+            <Avatar alt={alt} src={Profil_Url} />
         </>
     )
 }

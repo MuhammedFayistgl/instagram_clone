@@ -8,7 +8,7 @@ const Reple = () => {
     const [Toggle, setToggle] = useState<boolean>(false)
     return (
         <>
-            <div className='text-center font-serif text-xs text-gray-400 cursor-pointer'
+            <div className='text-center font-serif text-xs text-gray-400 cursor-pointer '
                 onClick={() => setToggle(!Toggle)}
 
             >{Toggle ? 'Hide replies' : "view reply"} </div>
@@ -17,7 +17,7 @@ const Reple = () => {
                     USER?.flatMap(o => o.comments.flatMap(o => o.replys.map((reply) => {
                         const { REPLY, REPLY_USER_NAME ,TYME_STAMB} = reply
                         return (
-                            <div className='flex  w-[100%] justify-between px-2'>
+                            <div className='flex  w-[100%] justify-between px-2 '>
 
                                 <span className='flex flex-row gap-2 '>
 

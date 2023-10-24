@@ -6,13 +6,16 @@ import { ButtonToolbar, Panel, Stack } from 'rsuite';
 import Like from "./Feed_Fun/ThumbButton";
 import CommentsContainer from "../Comments/CommentsContainer";
 import { useState } from "react";
+
+
+
 const Feed = () => {
 	const [commentToggler, setcommentToggler] = useState<boolean>(false)
 
 
 	return (
 		<div className="flex flex-col items-center pt-5">
-			{USER.flatMap(o => o.FEED_URL.map((itm,i) => {
+			{USER.flatMap(o => o.FEED_URL.map((itm, i) => {
 				return (
 					<Panel className="mb-2" style={{ width: '75%' }}>
 						<img
@@ -37,7 +40,7 @@ const Feed = () => {
 					</Panel>
 				)
 			}))}
-
+		
 
 		</div>
 	);

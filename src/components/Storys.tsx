@@ -5,16 +5,22 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { USER } from "../Data/Data";
+
+import Stories from 'react-insta-stories';
+import { useState } from "react";
+import { Activestory, Storytype } from "../types/Type";
 const Storys = () => {
+	const [openStory, setopenStory] = useState<Storytype>()
+
 	const settings = {
 		dots: false,
 		infinite: false,
 		speed: 500,
-		slidesToShow: 10,
+		// slidesToShow: 10,
 		slidesToScroll: 1,
 		initialSlide: 0,
-		arrows:false,
-	
+		arrows: false,
+
 		responsive: [
 			{
 				breakpoint: 1024,
@@ -34,13 +40,13 @@ const Storys = () => {
 					slidesToScroll: 1,
 					initialSlide: 1,
 					dots: false,
-					rows:1
+					rows: 1
 				}
 			},
 			{
 				breakpoint: 480,
 				settings: {
-					slidesToShow: 7,
+					slidesToShow: 6,
 					slidesToScroll: 1,
 					dots: false
 				}
@@ -49,7 +55,7 @@ const Storys = () => {
 			{
 				breakpoint: 300,
 				settings: {
-					slidesToShow: 5,
+					slidesToShow: 4,
 					slidesToScroll: 1,
 					dots: false
 				}
@@ -57,20 +63,36 @@ const Storys = () => {
 		]
 	};
 	return (
-		<div className=" ">
+		<div className=" " onBlur={() => setopenStory(undefined)}>
 			<Slider {...settings}>
-				{USER?.map((story,i) => {
+				{USER?.map((story: Storytype, i) => {
 					return (
-						<div key={i} className=" ">
-							<Avatar  src="https://avatars.githubusercontent.com/u/23637144" alt="@Sleaf" />
+						<div key={i} className=" " onClick={() => setopenStory(story)}>
+							<Avatar src="https://avatars.githubusercontent.com/u/23637144" alt="@Sleaf" />
 							<span className="">{story?.USER_NAME.slice(0, 7)}</span>
 						</div>
 					);
 				})}
 			</Slider>
+			{openStory && (
 
+				<div className="fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-[9999] ">
+					<Stories
 
-		</div>
+						stories={openStory?.STORY.map((itm : Activestory ) => itm)}
+						defaultInterval={1500}
+						// width={500}
+						// height={'100%'}
+						onAllStoriesEnd={() => setopenStory(undefined)
+
+						}
+						preventDefault={false}
+
+					/>
+				</div>
+
+			)}
+		</div >
 	);
 };
 
