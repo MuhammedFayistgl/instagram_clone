@@ -1,4 +1,4 @@
-import { BiMessageSquareAdd } from "react-icons/bi";
+
 import { LuSettings } from "react-icons/lu";
 import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
 import { RiMessengerFill } from "react-icons/ri";
@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { setTheme } from "../../redux/ThemeSlice";
 import { RootState } from "../../types/Type";
 import { Link } from "react-router-dom";
+import UplodeButton from "../Uplodebutton/UplodeButton";
+
 
 
 const Header = () => {
@@ -15,8 +17,8 @@ const Header = () => {
 	const Dispatch = useDispatch()
 
 	return (
-		<div className="flex items-center justify-evenly">
-			<BiMessageSquareAdd className={"text-2xl tex"} />
+		<div className="flex items-center justify-evenly sticky top-0">
+			<UplodeButton />
 			<Dropdown />
 			<LuSettings className={"text-2xl"} />
 

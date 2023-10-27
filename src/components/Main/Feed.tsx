@@ -17,7 +17,7 @@ const Feed = () => {
 		<div className="flex flex-col items-center pt-5">
 			{USER.flatMap(o => o.FEED_URL.map((itm, i) => {
 				return (
-					<Panel className="mb-2" style={{ width: '75%' }}>
+					<Panel className="mb-2" style={{ width: '95%' }}>
 						<img
 							key={i}
 							width="100%"

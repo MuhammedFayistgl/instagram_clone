@@ -1,16 +1,18 @@
 import React from 'react'
 import ChatHeder from './ChatHeder'
 import Chat from './Chat'
+import { Container } from '@mui/material'
+
 
 const ChatLayout = () => {
     return (
-        <div>
-            
+        <Container>
+
             <ChatHeder />
-        
-        
-        
-         <Chat /></div>
+
+
+
+            <Chat /></Container>
     )
 }
 

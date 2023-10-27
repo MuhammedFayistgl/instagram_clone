@@ -62,7 +62,7 @@ const ChatSlider = () => {
             {USER?.map((story: Storytype, i) => {
                 return (
                     <div key={i} className=" ">
-                        <Profile Profil_Url={'https://picsum.photos/50/50'} />
+                        <Profile Profil_Url={'https://picsum.photos/50/50'}  />
                         <span className="">{story?.USER_NAME.slice(0, 7)}...</span>
                     </div>
                 );

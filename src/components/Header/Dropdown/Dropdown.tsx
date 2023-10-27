@@ -1,10 +1,10 @@
 import { IconButton } from "@mui/material";
 import React from "react";
 
-const Dropdown = (): React.JSX => {
+const Dropdown = () => {
 	return (
 		<IconButton >
-			<img width={90} src={'https://www.vectorlogo.zone/logos/instagram/instagram-wordmark.svg'} alt="instagram" />
+			<img style={{color:'inherit'}} width={90} src={'https://www.vectorlogo.zone/logos/instagram/instagram-wordmark.svg'} alt="instagram" />
 		</IconButton>
 	);
 };

@@ -11,7 +11,7 @@ const Chat = () => {
                 <div className='flex justify-around pb-5'>
                     <span className='flex'>
 
-                        <span className='pr-3'><Profile Profil_Url='https://picsum.photos/500/700' alt='profilimg' /></span>
+                        <span className='pr-3'><Profile Size='md' Profil_Url='https://picsum.photos/500/700' alt='profilimg' /></span>
                         <span >
                             <div>muhammed__k</div>
                             <div><span>4+ new message </span> <span className=''>16 h</span></div>

@@ -39,4 +39,5 @@ export type RootState = ReturnType<typeof Store.getState>
 export type ProfilePropsType = {
     Profil_Url: string
     alt?: string
+    Size?: 'sm'| 'md' |'lg'|'xl'
 } 
