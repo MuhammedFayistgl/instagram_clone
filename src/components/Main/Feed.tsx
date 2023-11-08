@@ -1,49 +1,104 @@
-import { USER } from "../../Data/Data";
 import { FiSend } from "react-icons/fi";
 import { BsBookmark } from "react-icons/bs";
 import { FaRegCommentDots } from "react-icons/fa";
-import { ButtonToolbar, Panel, Stack } from 'rsuite';
+import { ButtonToolbar, Panel, Stack } from "rsuite";
 import Like from "./Feed_Fun/ThumbButton";
 import CommentsContainer from "../Comments/CommentsContainer";
-import { useState } from "react";
+import React, { useState } from "react";
+import Slider from "react-slick";
+import { Container } from "@mui/material";
 
+import { FeedData } from "../../types/FeedType";
+import Description from "../Description/Description";
 
+type PropsType = { FeedDataProps: FeedData[] };
 
-const Feed = () => {
-	const [commentToggler, setcommentToggler] = useState<boolean>(false)
-
-
-	return (
-		<div className="flex flex-col items-center pt-5">
-			{USER.flatMap(o => o.FEED_URL.map((itm, i) => {
-				return (
-					<Panel className="mb-2" style={{ width: '95%' }}>
-						<img
-							key={i}
-							width="100%"
-							src={itm}
-							alt="Paella dish"
-						/>
-						<Stack className="">
-							<div className="">
-								<Like />
-							</div>
-							<ButtonToolbar className="pt-3">
-								<span className="text-lg"><FiSend /></span>
-								<span className="text-lg">	<FaRegCommentDots onClick={() => setcommentToggler(!commentToggler)} /></span>
-								<span className="text-lg"><BsBookmark /></span>
-							</ButtonToolbar>
-							{/* Comments */}
-						</Stack>
-						{commentToggler && <CommentsContainer />}
-
-					</Panel>
-				)
-			}))}
-		
-
-		</div>
-	);
+const Feed: React.FC<PropsType> = ({ FeedDataProps }) => {
+    const [commentToggler, setcommentToggler] =
+        useState<boolean>(false);
+    const [selectedItem, setSelectedItem] = useState("");
+    const settings = {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        adaptiveHeight: true,
+        arrows: false,
+        appendDots: (dots: JSX.Element) => (
+            <div
+                style={{
+                    position: "absolute",
+                    bottom: 2,
+                    borderRadius: "10px",
+                    padding: "10px",
+                }}>
+                <ul style={{ margin: "0px" }}> {dots} </ul>
+            </div>
+        ),
+    };
+    return (
+        <div className="flex flex-col items-center pt-5">
+            {FeedDataProps?.map((itm: FeedData) => {
+                return (
+                    <Panel
+                        key={itm?._id}
+                        className="mb-2 customStylerspanelbody"
+                        style={{ width: "100%", padding: 0 }}>
+                        <Slider {...settings}>
+                            <img
+                                width="100%"
+                                src={itm?.FEED_URL}
+                                alt="Paella dish"
+                            />
+                        </Slider>
+                        <Container>
+                            <Stack className="">
+                                <ButtonToolbar className="pt-3">
+                                    <span className="text-lg ">
+                                        <Like />
+                                    </span>
+                                    <span className="text-lg">
+                                        <FiSend />
+                                    </span>
+                                    <span className="text-lg">
+                                        {" "}
+                                        <FaRegCommentDots
+                                            onClick={() => {
+                                                setcommentToggler(
+                                                    !commentToggler
+                                                ),
+                                                setSelectedItem(
+                                                        itm?._id
+                                                    );
+                                            }}
+                                        />
+                                    </span>
+                                    <span className="text-lg">
+                                        <BsBookmark />
+                                    </span>
+                                </ButtonToolbar>
+                                {/* Comments */}
+                            </Stack>
+                            <Description
+                                comments={itm?.comments}
+                                totalcommentsLength={
+                                    FeedDataProps.length
+                                }
+                            />
+                            {commentToggler &&
+                                itm._id === selectedItem &&
+                                (
+                                    <CommentsContainer
+                                        comments={itm?.comments}
+                                    />
+                                )}
+                        </Container>
+                    </Panel>
+                );
+            })}
+        </div>
+    );
 };
 
 export default Feed;

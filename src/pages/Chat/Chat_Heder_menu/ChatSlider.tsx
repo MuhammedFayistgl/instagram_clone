@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { USER } from "../../../Data/Data";
 import { Storytype } from "../../../types/Type";
-import Profile from "../../../components/Profile/Profile";
+import StorysProfile from "../../../components/Story/StorysProfile";
 
 const ChatSlider = () => {
     const settings = {
@@ -62,7 +62,7 @@ const ChatSlider = () => {
             {USER?.map((story: Storytype, i) => {
                 return (
                     <div key={i} className=" ">
-                        <Profile Profil_Url={'https://picsum.photos/50/50'}  />
+                        <StorysProfile storyview Profil_Url={'https://picsum.photos/50/50'}  />
                         <span className="">{story?.USER_NAME.slice(0, 7)}...</span>
                     </div>
                 );

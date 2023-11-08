@@ -2,9 +2,10 @@ import { Container } from '@mui/material'
 import Headerprofile from './Headerprofile'
 import Infoprofile from './Infoprofile'
 import Custombutton from '../../components/Button/Custombutton'
-import Storys from '../../components/Storys'
+import Storys from '../../components/Story/StorysProfile'
 import Infodetealsprofile from './Infodetealsprofile'
 import TabProfile from './Tab/TabProfile'
+
 
 const MyProfileLayout = () => {
 
@@ -16,13 +17,14 @@ const MyProfileLayout = () => {
                     <Infoprofile />
                     <Infodetealsprofile />
                 </div>
-                <div className='flex w-[100%] gap-3 mt-2 mb-2' >
+                <div className='flex  gap-3 mt-2 mb-2' >
                     <Custombutton width={'48%'} value='Edit Profile' />
                     <Custombutton width={'48%'} value='Share Profile' />
                 </div>
-                <Storys />
+                <Storys storyview Name Profil_Url='https://picsum.photos/500/700' />
             </Container>
             <TabProfile />
+
         </>
     )
 }

@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+const state = localStorage.getItem('theme')
 const themeSlice = createSlice({
     name: 'themeslice',
-    initialState: { value: localStorage.getItem('theme') }
+    initialState: { value: state ? true : false }
     ,
     reducers: {
         setTheme: (state) => {
-            state.value = state.value === 'dark' ? 'light' : 'dark'
-            localStorage.setItem('theme',state.value)
+            state.value = state.value = !state.value
+            localStorage.setItem('theme',state.value === true ? "true" : "false")
         }
     }
 

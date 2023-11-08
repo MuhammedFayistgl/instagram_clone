@@ -1,7 +1,8 @@
-import React from 'react'
+
 import ChatHeder from './ChatHeder'
 import Chat from './Chat'
 import { Container } from '@mui/material'
+
 
 
 const ChatLayout = () => {
@@ -9,10 +10,9 @@ const ChatLayout = () => {
         <Container>
 
             <ChatHeder />
+            <Chat />
 
-
-
-            <Chat /></Container>
+        </Container>
     )
 }
 

@@ -1,9 +1,10 @@
 import React from 'react'
-import Reels from './Reels'
+import Reels from './ReelsComponent'
+import Footer from '../../components/Footer/Footer'
 
 const ReelsLayout = () => {
   return (
-    <div><Reels/></div>
+    <div><Reels /><Footer /></div>
   )
 }
 

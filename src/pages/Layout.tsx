@@ -1,71 +1,32 @@
-import { Container } from "@mui/material";
-import Header from "../components/Header/Header";
-import Storys from "../components/Storys";
-import Footer from "../components/Footer/Footer";
-import Feed from "../components/Main/Feed";
-import { HashRouter, Route, Routes } from "react-router-dom";
-import ChatLayout from "./Chat/ChatLayout";
-import MyProfileLayout from "./MyProfile/MyProfileLayout";
-import NotiLayout from "./Notification/NotiLayout";
-import ReelsLayout from "./Reels/ReelsLayout";
-import SearchLayout from "./Search/SearchLayout";
+import { lazy } from "react";
+import { HashRouter, Route } from "react-router-dom";
+import SlideRoutes from 'react-slide-routes';
+
+const ChatLayout = lazy(() => import("./Chat/ChatLayout"))
+const MyProfileLayout = lazy(() => import("./MyProfile/MyProfileLayout"))
+const NotiLayout = lazy(() => import("./Notification/NotiLayout"))
+const ReelsLayout = lazy(() => import("./Reels/ReelsLayout"))
+const SearchLayout = lazy(() => import("./Search/SearchLayout"))
+const IndividualChatLayout = lazy(() => import("./IndividualChat/IndividualChatLayout"))
+const HomeLayout = lazy(() => import("./Home/HomeLayout"))
+
 
 
 const Layout = () => {
 	return (
 		<HashRouter>
-
-
 			<>
-				<div className="flex flex-col h-[100vh] justify-between">
-					<Routes>
+				<div className="flex flex-col h-[100%] overflow-hidden justify-between">
+
+					<SlideRoutes>
 						<Route path="/chat" element={<ChatLayout />} />
-
-					</Routes>
-					<Routes>
-						<Route path="/" element={
-							<>
-								<Container className="">
-									<Header />
-									<Storys />
-									<Feed />
-								</Container>
-							</>
-
-						} />
-
-
-						<Route path="/profile" element={
-							<>
-								<MyProfileLayout />
-
-							</>
-
-						} />
-						<Route path="/notification" element={
-							<>
-
-								<NotiLayout />
-
-							</>
-						} />
-						<Route path="/reels" element={
-							<>
-
-								<ReelsLayout />
-
-							</>
-						} />
-						<Route path="/search" element={
-							<>
-
-								<SearchLayout />
-
-							</>
-						} />
-
-					</Routes>
-					<Footer />
+						<Route path="/chat/:user_id" element={<IndividualChatLayout />} />
+						<Route path="/" element={<HomeLayout />} />
+						<Route path="/profile" element={<MyProfileLayout />} />
+						<Route path="/notification" element={<NotiLayout />} />
+						<Route path="/reels" element={<ReelsLayout />} />
+						<Route path="/search" element={<SearchLayout />} />
+					</SlideRoutes>
 				</div>
 			</>
 		</HashRouter>

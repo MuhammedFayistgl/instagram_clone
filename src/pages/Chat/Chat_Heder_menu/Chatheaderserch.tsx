@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Input, InputGroup } from 'rsuite'
 import { BiSearchAlt } from 'react-icons/bi'
 import ChatSlider from './ChatSlider'

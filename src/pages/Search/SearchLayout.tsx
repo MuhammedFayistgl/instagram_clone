@@ -1,7 +1,8 @@
-import React from 'react'
+
 import Search from './Search'
 import { Container } from '@mui/material'
 import Imagelist from '../../components/IMGlist/Imagelist'
+import Footer from '../../components/Footer/Footer'
 
 const SearchLayout = () => {
     return (
@@ -11,7 +12,8 @@ const SearchLayout = () => {
                     <Search />
                 </span>
             </Container>
-            <Imagelist variants={'quilted'} />
+            <Imagelist  />
+            <Footer />
         </>
     )
 }

@@ -22,7 +22,7 @@ const Header = () => {
 			<Dropdown />
 			<LuSettings className={"text-2xl"} />
 
-			{value === 'dark' ?
+			{value  ?
 				<span onClick={() => Dispatch(setTheme())}>
 					<MdOutlineLightMode className={"text-2xl"} />
 				</span>

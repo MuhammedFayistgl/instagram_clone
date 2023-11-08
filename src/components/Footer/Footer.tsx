@@ -3,8 +3,8 @@ import { GrHomeRounded } from 'react-icons/gr'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { AiOutlinePlaySquare } from 'react-icons/ai'
 import { FcLike } from 'react-icons/fc'
-import Profile from "../Profile/Profile"
 import { useNavigate } from "react-router-dom"
+import StorysProfile from "../Story/StorysProfile"
 
 
 const Footer = () => {
@@ -23,9 +23,10 @@ const Footer = () => {
           onClick={() => Navigation('/reels')} />
         <FcLike className=' text-2xl cursor-pointer'
           onClick={() => Navigation('/notification')} />
-        <span onClick={() => Navigation('/profile')}>
-          <Profile Profil_Url="https://picsum.photos/500/700" Size="sm" />
-        </span>
+        <div onClick={() => Navigation('/profile')}>
+          <StorysProfile
+          Profil_Url="https://picsum.photos/500/700" Size="sm" storyview={false}  />
+        </div>
 
       </div>
     </LayoutFooter>

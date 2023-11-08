@@ -1,38 +1,54 @@
-import { Divider } from '@mui/material'
-import React from 'react'
-import { CgLoadbar } from 'react-icons/cg'
-import Profile from '../Profile/Profile'
-import Comment from './Comment'
-import Like from '../Like/Like'
-import Reple from '../Replys/Reple'
-const CommentsContainer = () => {
+import { Divider } from "@mui/material";
+import { CgLoadbar } from "react-icons/cg";
+import Comment from "./Comment";
+import Like from "../Like/Like";
+import Reple from "../Replys/Reple";
+import StorysProfile from "../Story/StorysProfile";
+import { Comments } from "../../types/FeedType";
+
+type CommentProps = {
+    comments: Comments[];
+};
+
+const CommentsContainer = ({ comments }: CommentProps) => {
     return (
         <div>
-            <div className=' '>
-                <div className=' flex justify-center  flex-col items-center'>
-                    <CgLoadbar className={'text-lg  '} />
-                    <div className=''>
-                        Comments
-                    </div>
+            <div className=" ">
+                <div className=" flex justify-center  flex-col items-center">
+                    <CgLoadbar className={"text-lg  "} />
+                    <div className="">Comments</div>
                     <Divider />
-                    <div className='flex  w-[100%] justify-between px-2'>
-                        <span className='flex flex-row gap-2 '>
+                    {comments?.map((itm, i) => {
+                        return (
+                            <div
+                                key={i}
+                                className="flex  w-[100%] justify-between px-2">
+                                <span className="flex flex-row gap-2 ">
+                                    <StorysProfile
+                                        Profil_Url={itm?.user?.url}
+                                        Size="sm"
+                                        storyview
+                                    />
 
-                            <Profile />
-                            <div >
-
-                                <Comment />
-
-                                <Reple />
+                                    <div>
+                                        <Comment
+                                            commentData={itm?.COMMENT}
+                                            commentOwner={itm?.user}
+                                            timestamp={itm?.timestamp}
+                                        />
+                                        <Reple
+                                            replayData={itm?.replays}
+                                        />
+                                    </div>
+                                </span>
+                                <Like />
                             </div>
-                        </span>
-                        <Like />
-                    </div>
+                        );
+                    })}
                 </div>
-
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default CommentsContainer
+export default CommentsContainer;
