@@ -10,6 +10,7 @@ import { Container } from "@mui/material";
 
 import { FeedData } from "../../types/FeedType";
 import Description from "../Description/Description";
+import ImgLazyloading from "../IMG-component/ImgLazyloading";
 
 type PropsType = { FeedDataProps: FeedData[] };
 
@@ -46,11 +47,12 @@ const Feed: React.FC<PropsType> = ({ FeedDataProps }) => {
                         className="mb-2 customStylerspanelbody"
                         style={{ width: "100%", padding: 0 }}>
                         <Slider {...settings}>
-                            <img
+                            <ImgLazyloading  width={'100%'} height={''} src={itm?.FEED_URL}  alt={'image-placeholder'}/>
+                            {/* <img
                                 width="100%"
                                 src={itm?.FEED_URL}
                                 alt="Paella dish"
-                            />
+                            /> */}
                         </Slider>
                         <Container>
                             <Stack className="">

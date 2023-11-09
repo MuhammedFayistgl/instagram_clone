@@ -2,7 +2,7 @@ import { Divider } from "@mui/material";
 import { CgLoadbar } from "react-icons/cg";
 import Comment from "./Comment";
 import Like from "../Like/Like";
-import Reple from "../Replys/Reple";
+import Reply from "../Replys/Reply";
 import StorysProfile from "../Story/StorysProfile";
 import { Comments } from "../../types/FeedType";
 
@@ -36,7 +36,7 @@ const CommentsContainer = ({ comments }: CommentProps) => {
                                             commentOwner={itm?.user}
                                             timestamp={itm?.timestamp}
                                         />
-                                        <Reple
+                                        <Reply
                                             replayData={itm?.replays}
                                         />
                                     </div>

@@ -8,7 +8,7 @@ type ReplaysDataProps = {
     replayData: ReplaysEntity[];
 };
 
-const Reple: React.FC<ReplaysDataProps> = ({ replayData }) => {
+const Reply: React.FC<ReplaysDataProps> = ({ replayData }) => {
     const [Toggle, setToggle] = useState<boolean>(false);
     return (
         <>
@@ -52,4 +52,4 @@ const Reple: React.FC<ReplaysDataProps> = ({ replayData }) => {
     );
 };
 
-export default Reple;
+export default Reply;
