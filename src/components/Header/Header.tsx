@@ -20,7 +20,8 @@ const Header = () => {
 		<div className="flex items-center justify-evenly sticky top-0">
 			<UplodeButton />
 			<Dropdown />
-			<LuSettings className={"text-2xl"} />
+			<Link to={'/settings'}><LuSettings  className={"text-2xl"} /></Link>
+			
 
 			{value  ?
 				<span onClick={() => Dispatch(setTheme())}>
