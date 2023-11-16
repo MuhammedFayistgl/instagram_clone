@@ -5,8 +5,12 @@ import { AiOutlineBars } from 'react-icons/ai'
 import { useNavigate } from 'react-router-dom'
 import UplodeButton from '../../components/Uplodebutton/UplodeButton'
 
+type HeaderprofileProps ={
+    userName:string|undefined
+}
 
-const Headerprofile = () => {
+const Headerprofile = ({userName}:HeaderprofileProps) => {
+
     const Navigate = useNavigate()
     return (
         <div>
@@ -14,7 +18,7 @@ const Headerprofile = () => {
                 <span className='text-lg font-mono '>
                     <span className='flex items-center gap-2'>
                         <BsArrowLeft className=' text-2xl cursor-pointer' onClick={() => Navigate('/')} />
-                        <Namebutton Username='fayi_elm' />
+                        <Namebutton Username={userName} />
 
                     </span>
                 </span>

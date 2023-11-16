@@ -6,6 +6,7 @@ const UserSchema = new Schema(
         user: {
             url: String,
             USER_NAME: String,
+            uid: String,
         },
 
         STORY: [

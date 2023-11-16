@@ -1,4 +1,3 @@
-
 import { Store } from "../redux/store";
 import { ReactNode } from "react";
 import { FeedDataType } from "./FeedType";
@@ -39,14 +38,12 @@ export interface UserfeedsType {
 export type RootState = ReturnType<typeof Store.getState>;
 
 export type ProfilePropsType = {
-    Profil_Url: string;
+    Profil_Url: string | undefined;
     alt?: string;
     Size?: "sm" | "md" | "lg" | "xl";
     storyview: boolean;
     Name?: boolean;
 };
-
-
 
 export type ReelMetaInfoType = {
     videoDimensions?: {

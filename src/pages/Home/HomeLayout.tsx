@@ -1,6 +1,6 @@
 import { Container } from "@mui/material";
 import Header from "../../components/Header/Header";
-import StorysProfile from "../../components/Story/StorysProfile";
+import StorysProfile from "../../components/Story/StoreysProfile";
 import Feed from "../../components/Main/Feed";
 import Footer from "../../components/Footer/Footer";
 import { getData } from "../../utils/getData";

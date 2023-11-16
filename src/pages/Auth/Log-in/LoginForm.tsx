@@ -44,6 +44,7 @@ const LoginForm = () => {
                     const user = userCredential.user;
                     const token = userCredential.user.refreshToken;
                     cookies.set("token", token);
+                    cookies.set("uid", user.uid);
                     Dispatch(setUser(user));
                     swal({
                         icon: "success",

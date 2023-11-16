@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { USER } from "../../../Data/Data";
 import { Storytype } from "../../../types/Type";
-import StorysProfile from "../../../components/Story/StorysProfile";
+import StorysProfile from "../../../components/Story/StoreysProfile";
 
 const ChatSlider = () => {
     const settings = {

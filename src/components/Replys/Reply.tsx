@@ -1,7 +1,7 @@
 import Like from "../Like/Like";
 import React, { useState } from "react";
 import moment from "moment";
-import StorysProfile from "../Story/StorysProfile";
+import StorysProfile from "../Story/StoreysProfile";
 import { ReplaysEntity } from "../../types/FeedType";
 
 type ReplaysDataProps = {

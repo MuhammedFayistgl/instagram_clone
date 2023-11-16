@@ -11,7 +11,7 @@ import { Activestory, ProfilePropsType, Storytype } from "../../types/Type";
 import { Avatar, Dialog } from "@mui/material";
 
 
-const StorysProfile = ({ Profil_Url, alt, Size, storyview, Name }: ProfilePropsType) => {
+const StoreysProfile = ({ Profil_Url, alt, Size, storyview, Name }: ProfilePropsType) => {
 	const [openStory, setopenStory] = useState<Storytype>()
 	const [open, setopen] = useState(false)
 	const size = {
@@ -115,4 +115,4 @@ const StorysProfile = ({ Profil_Url, alt, Size, storyview, Name }: ProfilePropsT
 	);
 };
 
-export default StorysProfile;
+export default StoreysProfile;

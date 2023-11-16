@@ -3,7 +3,7 @@ import { CgLoadbar } from "react-icons/cg";
 import Comment from "./Comment";
 import Like from "../Like/Like";
 import Reply from "../Replys/Reply";
-import StorysProfile from "../Story/StorysProfile";
+import StorysProfile from "../Story/StoreysProfile";
 import { Comments } from "../../types/FeedType";
 
 type CommentProps = {

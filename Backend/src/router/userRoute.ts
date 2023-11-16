@@ -259,7 +259,6 @@ Route.post("/upload", async (req, res) => {
                             },
                         ],
                     },
-                  
                 ],
             },
             {
@@ -382,4 +381,38 @@ Route.get("/instagram-random-reel", async (req, res) => {
 
     const REELS = instaRandomFeed.filter((feed) => feed.REELS);
     res.send(REELS);
+});
+Route.get("/instagram-user-profile-details", async (req, res) => {
+    try {
+        const uid = req?.headers?.authorization?.split(" ")[1];
+        const userinformation = await userSchema.findOne({
+            "user.uid": { $in: uid },
+        });
+
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const newArray: any = [];
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const data = userinformation?.feed.forEach((data) =>
+            newArray.push(data.FEED_URL)
+        );
+        const userProfileData = [
+            {
+                user: userinformation?.user,
+                feeds: newArray,
+            },
+        ];
+        res.send(userProfileData);
+    } catch (error) {
+        res.send(error);
+    }
+});
+//  post
+Route.post("/create-User-with-userName", async (req) => {
+    const { uid, UserName } = req.body;
+    await userSchema.findOneAndUpdate({
+        user: {
+            USER_NAME: UserName,
+            uid: uid,
+        },
+    });
 });

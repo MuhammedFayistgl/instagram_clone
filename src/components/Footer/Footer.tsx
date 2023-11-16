@@ -4,7 +4,7 @@ import { AiOutlineSearch } from 'react-icons/ai'
 import { AiOutlinePlaySquare } from 'react-icons/ai'
 import { FcLike } from 'react-icons/fc'
 import { useNavigate } from "react-router-dom"
-import StorysProfile from "../Story/StorysProfile"
+import StorysProfile from "../Story/StoreysProfile"
 
 
 const Footer = () => {

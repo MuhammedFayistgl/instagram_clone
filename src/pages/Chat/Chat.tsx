@@ -1,7 +1,7 @@
 
 import { AiOutlineCamera } from 'react-icons/ai'
 import { Badge, Container } from 'rsuite'
-import StorysProfile from '../../components/Story/StorysProfile'
+import StorysProfile from '../../components/Story/StoreysProfile'
 import { useNavigate } from 'react-router-dom'
 import { USER } from '../../Data/Data'
 

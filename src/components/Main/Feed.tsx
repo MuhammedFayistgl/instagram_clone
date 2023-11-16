@@ -12,7 +12,7 @@ import { FeedData } from "../../types/FeedType";
 import Description from "../Description/Description";
 import ImgLazyloading from "../IMG-component/ImgLazyloading";
 
-type PropsType = { FeedDataProps: FeedData[] };
+type PropsType = { FeedDataProps: FeedData[]|undefined };
 
 const Feed: React.FC<PropsType> = ({ FeedDataProps }) => {
     const [commentToggler, setcommentToggler] =

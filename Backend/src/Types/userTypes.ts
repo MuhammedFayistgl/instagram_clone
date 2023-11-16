@@ -14,6 +14,7 @@ export type FeedServerDataType = {
 export type userServerData = {
     url: string;
     USER_NAME: string;
+    uid: string;
 };
 // Feeds
 export type FeedServerData = {

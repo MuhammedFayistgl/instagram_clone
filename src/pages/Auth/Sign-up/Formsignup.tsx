@@ -5,16 +5,15 @@ import { auth } from "../../../config/firebase";
 import { useNavigate } from "react-router-dom";
 import { Store } from "react-notifications-component";
 import swal from "sweetalert";
-import { useDispatch } from "react-redux";
-import { setUser } from "../../../redux/userSlice";
+
+import Cookies from "universal-cookie";
+import { getAxiosinstance } from "../../../utils/getAxiosinstance";
 type FormDataType = {
     email?: string;
-    FullName?: string;
     UserName?: string;
     Password?: string;
 };
 const Formsignup = () => {
-    const Dispatch = useDispatch();
     const navigate = useNavigate();
     const cookies = new Cookies(null, { path: "/" });
     const [individualData, setindivdualData] = useState<FormDataType>(
@@ -22,12 +21,12 @@ const Formsignup = () => {
     );
 
     const submitHandler = async () => {
-        const { Password, email } = individualData;
-        if (!email || !Password) {
+        const { Password, email, UserName } = individualData;
+        if (!email || !Password || !UserName) {
             Store.addNotification({
                 type: "warning",
                 title: "Oops !",
-                message: "please fill email or password",
+                message: "please fill all field",
                 insert: "top",
                 container: "top-right",
                 animationIn: ["animate__animated", "animate__fadeIn"],
@@ -44,17 +43,25 @@ const Formsignup = () => {
             )
                 .then((userCredential) => {
                     // Signed up
-                    const user = userCredential.user;
+                    const uid = userCredential.user.uid;
                     const token = userCredential.user.refreshToken;
+                    getAxiosinstance.post(
+                        "/create-User-with-userName",
+                        {
+                            UserName: UserName,
+                            uid: uid,
+                        }
+                    );
                     cookies.set("token", token);
-                    Dispatch(setUser(user));
+                    cookies.set("uid",uid);
                     swal({
                         icon: "success",
                         text: "SingUp Succuss fully",
                     });
+
                     navigate("/");
-                    // ...
                 })
+
                 .catch((error) => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
@@ -91,18 +98,6 @@ const Formsignup = () => {
                     name="email"
                     size="md"
                     placeholder="email"
-                />
-            </div>
-            <div className="input-box">
-                <Input
-                    onChange={(data) =>
-                        setindivdualData((pre) => {
-                            return { ...pre, FullName: data };
-                        })
-                    }
-                    size="md"
-                    placeholder="Full name"
-                    name="FullName"
                 />
             </div>
             <div className="input-box">
