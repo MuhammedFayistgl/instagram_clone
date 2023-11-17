@@ -17,11 +17,14 @@ const MyProfileLayout = () => {
     console.log("p", profileData);
 
     useEffect(() => {
-        getAxiosinstance
-            .get("/instagram-user-profile-details")
-            .then((data) => {
-                setProfileData(data.data);
-            });
+        if (!profileData) {
+            getAxiosinstance
+                .get("/instagram-user-profile-details")
+                .then((data) => {
+                    setProfileData(data.data);
+                });
+        }
+
         // return () => {};
     }, []);
 

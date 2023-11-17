@@ -12,7 +12,7 @@ import { FeedData } from "../../types/FeedType";
 import Description from "../Description/Description";
 import ImgLazyloading from "../IMG-component/ImgLazyloading";
 
-type PropsType = { FeedDataProps: FeedData[]|undefined };
+type PropsType = { FeedDataProps: FeedData[] | undefined };
 
 const Feed: React.FC<PropsType> = ({ FeedDataProps }) => {
     const [commentToggler, setcommentToggler] =
@@ -47,13 +47,18 @@ const Feed: React.FC<PropsType> = ({ FeedDataProps }) => {
                         className="mb-2 customStylerspanelbody"
                         style={{ width: "100%", padding: 0 }}>
                         <Slider {...settings}>
-                            <ImgLazyloading  width={'100%'} height={''} src={itm?.FEED_URL}  alt={'image-placeholder'}/>
+                            <ImgLazyloading
+                                width={"100%"}
+                                height={""}
+                                src={itm?.FEED_URL}
+                                alt={"image-placeholder"}
+                            />
                         </Slider>
                         <Container>
                             <Stack className="">
                                 <ButtonToolbar className="pt-3">
                                     <span className="text-lg ">
-                                        <Like />
+                                        <Like targetID={itm?._id} />
                                     </span>
                                     <span className="text-lg">
                                         <FiSend />
@@ -65,7 +70,7 @@ const Feed: React.FC<PropsType> = ({ FeedDataProps }) => {
                                                 setcommentToggler(
                                                     !commentToggler
                                                 ),
-                                                setSelectedItem(
+                                                    setSelectedItem(
                                                         itm?._id
                                                     );
                                             }}
@@ -84,8 +89,7 @@ const Feed: React.FC<PropsType> = ({ FeedDataProps }) => {
                                 }
                             />
                             {commentToggler &&
-                                itm._id === selectedItem &&
-                                (
+                                itm._id === selectedItem && (
                                     <CommentsContainer
                                         comments={itm?.comments}
                                     />

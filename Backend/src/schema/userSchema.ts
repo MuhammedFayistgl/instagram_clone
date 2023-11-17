@@ -25,6 +25,7 @@ const UserSchema = new Schema(
         feed: [
             {
                 FEED_URL: String,
+                _id: String,
                 timestamp: String,
                 comments: [
                     {

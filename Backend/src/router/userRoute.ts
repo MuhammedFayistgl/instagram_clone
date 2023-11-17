@@ -1,4 +1,4 @@
-import { Router } from "express";
+import { Request, Response, Router } from "express";
 import userSchema from "../schema/userSchema";
 
 export const Route = Router();
@@ -416,3 +416,43 @@ Route.post("/create-User-with-userName", async (req) => {
         },
     });
 });
+
+Route.post(
+    "/instagram-user-like",
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    async (req: Request, res: Response) => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const { Like, targetID } = req.body;
+        // const TargetLikeObj = await userSchema.updateOne({ "feed._id": { $eq: targetID }},{$set:{'feed.Like': Like  }})
+        const countLike = await userSchema.findOneAndUpdate(
+            {
+                feed: [{ _id: { $eq: targetID } }],
+            },
+            { $inc: {"Like": 1 } },
+            { upsert: true, new: true }
+        );
+
+        // console.log("Unlike, targetID", Like, targetID);
+        console.log("countLike", countLike);
+    }
+);
+Route.post(
+    "/instagram-user-Unlike",
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    async (req: Request, res: Response) => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const { Like, targetID } = req.body;
+        const countLike = await userSchema.findOneAndUpdate(
+            {
+                feed: [{ _id: { $eq: targetID } }],
+            },
+            { $inc: {"Like": -1 } },
+            { upsert: true, new: true }
+            // { "feed._id": { $eq: targetID } },
+            // { $inc: { "Like": -1 } },
+        );
+
+        // console.log("Unlike, targetID", Like, targetID);
+        console.log("countUnlike", countLike);
+    }
+);

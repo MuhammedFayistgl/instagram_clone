@@ -34,6 +34,7 @@ export interface FeedData {
     comments: Comments;
     FEED_URL: string;
     _id: string;
+    Like: number;
 }
 export interface Comments {
     user: User;

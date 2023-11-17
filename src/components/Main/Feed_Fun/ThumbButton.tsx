@@ -1,13 +1,42 @@
+import { useEffect, useState } from "react";
+import { Rate } from "rsuite";
+import { getAxiosinstance } from "../../../utils/getAxiosinstance";
+type likeProps = {
+    targetID: string | undefined;
+};
+const Like = ({ targetID }: likeProps) => {
+    const [Like, setlike] = useState(0);
+    console.log(Like);
 
-import { useState } from 'react'
-import { Rate } from 'rsuite'
+    useEffect(() => {
+        if (Like === 1) {
+            getAxiosinstance.post("/instagram-user-like", {
+                Like: Like,
+                targetID: targetID,
+            });
+        }else{
+            getAxiosinstance.post("/instagram-user-Unlike", {
+                Like: Like,
+                targetID: targetID,
+            }); 
+        }
+    }, [Like]);
 
-const Like = () => {
-    const [Like, setlike] = useState(1)
     return (
-        <Rate size='sm' max={1} color='red' value={Like} character="❤" onChange={setlike}
-        />
-    )
-}
+        <span>
+            <Rate
+                onClick={() =>
+                    setlike((num) => (num === 0 ? (num = 1) : 0))
+                }
+                size="sm"
+                max={1}
+                color="red"
+                value={Like}
+                character="❤"
+                // onChange={setlike}
+            />
+        </span>
+    );
+};
 
-export default Like
+export default Like;
