@@ -54,7 +54,7 @@ export interface ReplaysEntity {
 }
 
 export interface feeds {
-    comments: Comments;
+    comments: Comments[];
     FEED_URL: string;
     _id: string;
     Like: number;

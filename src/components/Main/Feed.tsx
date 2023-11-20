@@ -2,24 +2,24 @@ import { FiSend } from "react-icons/fi";
 import { BsBookmark } from "react-icons/bs";
 import { FaRegCommentDots } from "react-icons/fa";
 import { ButtonToolbar, Panel, Stack } from "rsuite";
-import Like from "./Feed_Fun/ThumbButton";
+import ThumbButton from "./Feed_Fun/ThumbButton";
 import CommentsContainer from "../Comments/CommentsContainer";
 import React, { useState } from "react";
 import Slider from "react-slick";
 import { Container } from "@mui/material";
 
-import { FeedData } from "../../types/FeedType";
+import { feeds } from "../../types/FeedType";
 import Description from "../Description/Description";
 import ImgLazyloading from "../IMG-component/ImgLazyloading";
 import UserNameLayout from "../UserNameLayout/UserNameLayout";
 import { user } from "../../types/ProfileType";
 
 type PropsType = {
-    FeedDataProps: FeedData[] | undefined;
+    FeedDataProps: feeds[] | undefined;
     user: user;
 };
 
-const Feed: React.FC<PropsType> = ({ FeedDataProps,user }) => {
+const Feed: React.FC<PropsType> = ({ FeedDataProps, user }) => {
     const [commentToggler, setcommentToggler] =
         useState<boolean>(false);
     const [selectedItem, setSelectedItem] = useState("");
@@ -43,23 +43,24 @@ const Feed: React.FC<PropsType> = ({ FeedDataProps,user }) => {
             </div>
         ),
     };
-    console.log("Feeduser", user);
+    console.log("FeedDataProps", FeedDataProps);
 
     return (
         <div className="flex flex-col items-center pt-5">
-            {FeedDataProps?.map((itm: FeedData) => {
+            {FeedDataProps?.map((itm: feeds) => {
+                const { FEED_URL, _id, comments } = itm;
                 return (
                     <>
                         <UserNameLayout User={user} />
                         <Panel
-                            key={itm?._id}
+                            key={_id}
                             className="mb-2 customStylerspanelbody"
                             style={{ width: "100%", padding: 0 }}>
                             <Slider {...settings}>
                                 <ImgLazyloading
                                     width={"100%"}
                                     height={""}
-                                    src={itm?.FEED_URL}
+                                    src={FEED_URL}
                                     alt={"image-placeholder"}
                                 />
                             </Slider>
@@ -67,8 +68,8 @@ const Feed: React.FC<PropsType> = ({ FeedDataProps,user }) => {
                                 <Stack className="">
                                     <ButtonToolbar className="pt-3">
                                         <span className="text-lg ">
-                                            <Like
-                                                targetID={itm?._id}
+                                            <ThumbButton
+                                                targetID={_id}
                                             />
                                         </span>
                                         <span className="text-lg">
@@ -82,7 +83,7 @@ const Feed: React.FC<PropsType> = ({ FeedDataProps,user }) => {
                                                         !commentToggler
                                                     ),
                                                         setSelectedItem(
-                                                            itm?._id
+                                                            _id
                                                         );
                                                 }}
                                             />
@@ -94,7 +95,14 @@ const Feed: React.FC<PropsType> = ({ FeedDataProps,user }) => {
                                     {/* Comments */}
                                 </Stack>
                                 <Description
-                                    comments={itm?.comments}
+                                    timeStamp={
+                                        comments[comments?.length - 1]
+                                            .timestamp
+                                    }
+                                    latestComment={[
+                                        comments[comments?.length - 1]
+                                            .COMMENT,
+                                    ]}
                                     totalcommentsLength={
                                         FeedDataProps.length
                                     }
@@ -102,7 +110,7 @@ const Feed: React.FC<PropsType> = ({ FeedDataProps,user }) => {
                                 {commentToggler &&
                                     itm._id === selectedItem && (
                                         <CommentsContainer
-                                            comments={itm?.comments}
+                                            comments={comments}
                                         />
                                     )}
                             </Container>

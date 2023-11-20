@@ -4,7 +4,7 @@ import { getAxiosinstance } from "../../../utils/getAxiosinstance";
 type likeProps = {
     targetID: string | undefined;
 };
-const Like = ({ targetID }: likeProps) => {
+const ThumbButton = ({ targetID }: likeProps) => {
     const [Like, setlike] = useState(0);
     console.log(Like);
 
@@ -20,7 +20,7 @@ const Like = ({ targetID }: likeProps) => {
                 targetID: targetID,
             }); 
         }
-    }, [Like]);
+    }, [Like, targetID]);
 
     return (
         <span>
@@ -39,4 +39,4 @@ const Like = ({ targetID }: likeProps) => {
     );
 };
 
-export default Like;
+export default ThumbButton;

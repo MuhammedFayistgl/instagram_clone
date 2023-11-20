@@ -1,17 +1,16 @@
 import { useState } from "react";
-import { Comments } from "../../types/FeedType";
 import moment from "moment";
 
 type DescriptionProps = {
-    comments: Comments[];
+    timeStamp: string;
+    latestComment: [string];
     totalcommentsLength: number;
 };
 const Description = ({
-    comments,
+    timeStamp,
+    latestComment,
     totalcommentsLength,
 }: DescriptionProps) => {
-  
-
     const [open, setOpen] = useState<boolean>(false);
     return (
         <>
@@ -20,12 +19,9 @@ const Description = ({
                 5268 <span>likes</span>
             </div>
             <div className="tracking-wide ">
-                {`${comments[comments?.length - 1]?.COMMENT?.slice(
+                {`${latestComment[0]?.slice(
                     0,
-                    open
-                        ? comments[comments?.length - 1]?.COMMENT
-                                ?.length
-                        : 60
+                    open ? latestComment[0]?.length : 60
                 )}...`}
                 {!open && (
                     <span
@@ -51,9 +47,7 @@ const Description = ({
                 View all <span>{totalcommentsLength}</span> comment...
             </div>
             <div className=" text-slate-600">
-                {moment(
-                    Number(comments[comments?.length - 1]?.timestamp)
-                ).fromNow()}
+                {moment(Number(timeStamp)).fromNow()}
             </div>
         </>
     );
