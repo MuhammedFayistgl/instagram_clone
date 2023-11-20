@@ -12,11 +12,11 @@ const HomeLayout = () => {
     useEffect(() => {
         !Data &&
             getData("/instagram-random-feed").then((data) =>
-                setData(data.data)
+                setData(data.data[0])
             );
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-    console.log("data", Data);
+    console.log("data", Data?.user);
 
     return (
         <>
@@ -28,7 +28,7 @@ const HomeLayout = () => {
                     Name
                 />
             </Container>
-            <Feed FeedDataProps={Data} />
+            <Feed FeedDataProps={  Data?.feeds} user={Data?.user} />
             <Container>
                 <Footer />
             </Container>

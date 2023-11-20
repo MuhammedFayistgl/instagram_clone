@@ -365,7 +365,7 @@ Route.get("/instagram-random-feed", async (req, res) => {
     const newreel: any = [];
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const randomFeeds = (await userSchema.find()).forEach((data) =>
-        newreel.push(...data.feed)
+        newreel.push({ feeds: [...data.feed], user: data.user })
     );
     res.send(newreel);
 });
@@ -424,16 +424,25 @@ Route.post(
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const { Like, targetID } = req.body;
         // const TargetLikeObj = await userSchema.updateOne({ "feed._id": { $eq: targetID }},{$set:{'feed.Like': Like  }})
-        const countLike = await userSchema.findOneAndUpdate(
-            {
-                feed: [{ _id: { $eq: targetID } }],
-            },
-            { $inc: {"Like": 1 } },
-            { upsert: true, new: true }
-        );
+        // const countLike = await userSchema.findOneAndUpdate(
+        //     {
+        //         feed: [{ _id: { $eq: targetID } }],
+        //     },
+        //     { $inc: {"Like": 1 } },
+        //     { upsert: true, new: true }
+        // );
+        const uid = req?.headers?.authorization?.split(" ")[1];
+        // const countLike = await userSchema.updateOne(
+        //     {
+        //         "feed.FEED_URL":
+        //             "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+        //     },
+        //     { $inc: { "feed.$.Like": ';lkjfdglkdj' } },
+            
+        // );
 
-        // console.log("Unlike, targetID", Like, targetID);
-        console.log("countLike", countLike);
+        console.log("Unlike, targetID", Like, targetID);
+        // console.log("countLike", countLike);
     }
 );
 Route.post(
@@ -442,17 +451,17 @@ Route.post(
     async (req: Request, res: Response) => {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const { Like, targetID } = req.body;
-        const countLike = await userSchema.findOneAndUpdate(
-            {
-                feed: [{ _id: { $eq: targetID } }],
-            },
-            { $inc: {"Like": -1 } },
-            { upsert: true, new: true }
-            // { "feed._id": { $eq: targetID } },
-            // { $inc: { "Like": -1 } },
-        );
+        // const countLike = await userSchema.findOneAndUpdate(
+        //     {
+        //         feed: [{ _id: { $eq: targetID } }],
+        //     },
+        //     { $inc: {"Like": -1 } },
+        //     { upsert: true, new: true }
+        // { "feed._id": { $eq: targetID } },
+        // { $inc: { "Like": -1 } },
+        // );
 
         // console.log("Unlike, targetID", Like, targetID);
-        console.log("countUnlike", countLike);
+        // console.log("countUnlike", countLike);
     }
 );

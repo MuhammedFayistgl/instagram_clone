@@ -20,10 +20,10 @@ const Description = ({
                 5268 <span>likes</span>
             </div>
             <div className="tracking-wide ">
-                {`${comments[comments.length - 1]?.COMMENT?.slice(
+                {`${comments[comments?.length - 1]?.COMMENT?.slice(
                     0,
                     open
-                        ? comments[comments.length - 1]?.COMMENT
+                        ? comments[comments?.length - 1]?.COMMENT
                                 ?.length
                         : 60
                 )}...`}
@@ -52,7 +52,7 @@ const Description = ({
             </div>
             <div className=" text-slate-600">
                 {moment(
-                    Number(comments[comments.length - 1]?.timestamp)
+                    Number(comments[comments?.length - 1]?.timestamp)
                 ).fromNow()}
             </div>
         </>

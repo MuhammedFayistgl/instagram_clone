@@ -1,3 +1,5 @@
+import { user } from "./ProfileType";
+
 //  Feed Data Type
 export type FeedDataType = {
     COMMENT_USER_NAME: string;
@@ -31,13 +33,11 @@ export type FeedDataType = {
 //     }[];
 // }[];
 export interface FeedData {
-    comments: Comments;
-    FEED_URL: string;
-    _id: string;
-    Like: number;
+    feeds: feeds;
+    user: user;
 }
 export interface Comments {
-    user: User;
+    user: user;
     COMMENT: string;
     replays?: ReplaysEntity[] | null;
     timestamp: string;
@@ -47,8 +47,15 @@ export interface User {
     USER_NAME: string;
 }
 export interface ReplaysEntity {
-    user: User;
+    user: user;
     REPLY: string;
     timestamp: string;
     _id: string;
+}
+
+export interface feeds {
+    comments: Comments;
+    FEED_URL: string;
+    _id: string;
+    Like: number;
 }

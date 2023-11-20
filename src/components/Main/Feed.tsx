@@ -11,10 +11,15 @@ import { Container } from "@mui/material";
 import { FeedData } from "../../types/FeedType";
 import Description from "../Description/Description";
 import ImgLazyloading from "../IMG-component/ImgLazyloading";
+import UserNameLayout from "../UserNameLayout/UserNameLayout";
+import { user } from "../../types/ProfileType";
 
-type PropsType = { FeedDataProps: FeedData[] | undefined };
+type PropsType = {
+    FeedDataProps: FeedData[] | undefined;
+    user: user;
+};
 
-const Feed: React.FC<PropsType> = ({ FeedDataProps }) => {
+const Feed: React.FC<PropsType> = ({ FeedDataProps,user }) => {
     const [commentToggler, setcommentToggler] =
         useState<boolean>(false);
     const [selectedItem, setSelectedItem] = useState("");
@@ -38,64 +43,71 @@ const Feed: React.FC<PropsType> = ({ FeedDataProps }) => {
             </div>
         ),
     };
+    console.log("Feeduser", user);
+
     return (
         <div className="flex flex-col items-center pt-5">
             {FeedDataProps?.map((itm: FeedData) => {
                 return (
-                    <Panel
-                        key={itm?._id}
-                        className="mb-2 customStylerspanelbody"
-                        style={{ width: "100%", padding: 0 }}>
-                        <Slider {...settings}>
-                            <ImgLazyloading
-                                width={"100%"}
-                                height={""}
-                                src={itm?.FEED_URL}
-                                alt={"image-placeholder"}
-                            />
-                        </Slider>
-                        <Container>
-                            <Stack className="">
-                                <ButtonToolbar className="pt-3">
-                                    <span className="text-lg ">
-                                        <Like targetID={itm?._id} />
-                                    </span>
-                                    <span className="text-lg">
-                                        <FiSend />
-                                    </span>
-                                    <span className="text-lg">
-                                        {" "}
-                                        <FaRegCommentDots
-                                            onClick={() => {
-                                                setcommentToggler(
-                                                    !commentToggler
-                                                ),
-                                                    setSelectedItem(
-                                                        itm?._id
-                                                    );
-                                            }}
+                    <>
+                        <UserNameLayout User={user} />
+                        <Panel
+                            key={itm?._id}
+                            className="mb-2 customStylerspanelbody"
+                            style={{ width: "100%", padding: 0 }}>
+                            <Slider {...settings}>
+                                <ImgLazyloading
+                                    width={"100%"}
+                                    height={""}
+                                    src={itm?.FEED_URL}
+                                    alt={"image-placeholder"}
+                                />
+                            </Slider>
+                            <Container>
+                                <Stack className="">
+                                    <ButtonToolbar className="pt-3">
+                                        <span className="text-lg ">
+                                            <Like
+                                                targetID={itm?._id}
+                                            />
+                                        </span>
+                                        <span className="text-lg">
+                                            <FiSend />
+                                        </span>
+                                        <span className="text-lg">
+                                            {" "}
+                                            <FaRegCommentDots
+                                                onClick={() => {
+                                                    setcommentToggler(
+                                                        !commentToggler
+                                                    ),
+                                                        setSelectedItem(
+                                                            itm?._id
+                                                        );
+                                                }}
+                                            />
+                                        </span>
+                                        <span className="text-lg">
+                                            <BsBookmark />
+                                        </span>
+                                    </ButtonToolbar>
+                                    {/* Comments */}
+                                </Stack>
+                                <Description
+                                    comments={itm?.comments}
+                                    totalcommentsLength={
+                                        FeedDataProps.length
+                                    }
+                                />
+                                {commentToggler &&
+                                    itm._id === selectedItem && (
+                                        <CommentsContainer
+                                            comments={itm?.comments}
                                         />
-                                    </span>
-                                    <span className="text-lg">
-                                        <BsBookmark />
-                                    </span>
-                                </ButtonToolbar>
-                                {/* Comments */}
-                            </Stack>
-                            <Description
-                                comments={itm?.comments}
-                                totalcommentsLength={
-                                    FeedDataProps.length
-                                }
-                            />
-                            {commentToggler &&
-                                itm._id === selectedItem && (
-                                    <CommentsContainer
-                                        comments={itm?.comments}
-                                    />
-                                )}
-                        </Container>
-                    </Panel>
+                                    )}
+                            </Container>
+                        </Panel>
+                    </>
                 );
             })}
         </div>
