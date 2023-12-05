@@ -17,6 +17,7 @@ function App() {
             <CustomProvider theme={value ? "dark" : "light"}>
                 <Suspense fallback={"loding.."}>
                     <ReactNotifications />
+
                     <Layout />
                 </Suspense>
             </CustomProvider>

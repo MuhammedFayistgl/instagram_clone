@@ -2,11 +2,10 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 import "dotenv/config";
 import { connectDB } from "./config/server";
-import { Route } from "./router/userRoute";
+import  Route  from "./router/userRoute";
 import cookieParser from 'cookie-parser'
 import bodyParser from "body-parser";
-
-
+import 'dotenv/config'
 const app = express();
 
 

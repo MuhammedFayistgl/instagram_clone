@@ -1,10 +1,10 @@
 import { Container } from "@mui/material";
 
-import StoreysProfile from "../Story/StoreysProfile";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
 import { user } from "../../types/ProfileType";
 import DropdownComponent from "../Dropdown/DropdownComponent";
+import StoryProfile from "../Story/StoryProfile";
 type UserNameLayout = {
     User: user;
 };
@@ -15,7 +15,7 @@ const UserNameLayout = ({ User }: UserNameLayout) => {
         <Container>
             <div className="flex justify-between my-2">
                 <span>
-                    <StoreysProfile
+                    <StoryProfile
                         storyview
                         Size="sm"
                         Profil_Url={User?.url}

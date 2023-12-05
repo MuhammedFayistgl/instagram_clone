@@ -5,6 +5,8 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../../redux/userSlice";
 import Cookies from "universal-cookie";
+import SidebarLayout from "../../components/SaidBar/SidebarLayout";
+import SuggestedRoot from "../../components/SuggestedList/SuggestedRoot";
 
 type PrivetRouteProps = {
     children?: ReactNode;
@@ -46,7 +48,19 @@ const PrivetRoute: React.FC<PrivetRouteProps> = (Props) => {
     observerUser();
 
     if (localStorage.getItem("uid")) {
-        return <>{Props.children}</>;
+        return (
+            <>
+                <div className="flex flex-row ">
+                    <div className="w-[20%] ">
+                        <SidebarLayout />
+                    </div>
+                    <span className="w-[50%]"> {Props.children}</span>
+                    <div className="w-[30%]">
+                        <SuggestedRoot />
+                    </div>
+                </div>
+            </>
+        );
     } else {
         <Navigate to={"/authentication/logIn"} />;
     }

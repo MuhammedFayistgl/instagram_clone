@@ -1,5 +1,5 @@
 import { Container } from '@mui/material'
-import StorysProfile from '../../components/Story/StoreysProfile'
+import StorysProfile from '../../components/Story/StoryProfile'
 import Footer from '../../components/Footer/Footer'
 
 const NotiLayout = () => {

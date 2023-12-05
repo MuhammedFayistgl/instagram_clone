@@ -8,18 +8,18 @@ import React, { useState } from "react";
 import Slider from "react-slick";
 import { Container } from "@mui/material";
 
-import { feeds } from "../../types/FeedType";
+import { FeedData, feeds } from "../../types/FeedType";
 import Description from "../Description/Description";
 import ImgLazyloading from "../IMG-component/ImgLazyloading";
 import UserNameLayout from "../UserNameLayout/UserNameLayout";
-import { user } from "../../types/ProfileType";
+
+
 
 type PropsType = {
-    FeedDataProps: feeds[] | undefined;
-    user: user;
+    FeedDataProps: FeedData| undefined;
 };
 
-const Feed: React.FC<PropsType> = ({ FeedDataProps, user }) => {
+const Feed: React.FC<PropsType> = ({ FeedDataProps}) => {
     const [commentToggler, setcommentToggler] =
         useState<boolean>(false);
     const [selectedItem, setSelectedItem] = useState("");
@@ -47,11 +47,12 @@ const Feed: React.FC<PropsType> = ({ FeedDataProps, user }) => {
 
     return (
         <div className="flex flex-col items-center pt-5">
-            {FeedDataProps?.map((itm: feeds) => {
+            
+            {FeedDataProps?.feeds?.map((itm: feeds) => {
                 const { FEED_URL, _id, comments } = itm;
                 return (
                     <>
-                        <UserNameLayout User={user} />
+                        <UserNameLayout User={FeedDataProps?.user} key={_id}/>
                         <Panel
                             key={_id}
                             className="mb-2 customStylerspanelbody"
@@ -104,7 +105,7 @@ const Feed: React.FC<PropsType> = ({ FeedDataProps, user }) => {
                                             .COMMENT,
                                     ]}
                                     totalcommentsLength={
-                                        FeedDataProps.length
+                                        FeedDataProps?.feeds?.length
                                     }
                                 />
                                 {commentToggler &&
@@ -114,12 +115,15 @@ const Feed: React.FC<PropsType> = ({ FeedDataProps, user }) => {
                                         />
                                     )}
                             </Container>
+                       
                         </Panel>
                     </>
                 );
             })}
+            
         </div>
     );
 };
 
 export default Feed;
+

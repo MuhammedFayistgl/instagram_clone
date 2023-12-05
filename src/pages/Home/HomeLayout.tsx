@@ -1,14 +1,15 @@
 import { Container } from "@mui/material";
 import Header from "../../components/Header/Header";
-import StorysProfile from "../../components/Story/StoreysProfile";
+import StoryProfile from "../../components/Story/StoryProfile";
 import Feed from "../../components/Main/Feed";
 import Footer from "../../components/Footer/Footer";
 import { getData } from "../../utils/getData";
 import { useEffect, useState } from "react";
 import { FeedData } from "../../types/FeedType";
+import MYSkeleton from "../../components/Skeleton/MYSkeleton";
 
 const HomeLayout = () => {
-    const [Data, setData] = useState<FeedData | undefined>();
+    const [Data, setData] = useState<FeedData>();
     useEffect(() => {
         !Data &&
             getData("/instagram-random-feed").then((data) =>
@@ -16,19 +17,21 @@ const HomeLayout = () => {
             );
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-    console.log("data", Data?.user);
+    console.log("data", Data);
 
     return (
         <>
             <Container>
                 <Header />
-                <StorysProfile
+                <StoryProfile
                     Profil_Url="https://picsum.photos/500/700"
                     storyview
                     Name
+                    statusSlide
                 />
             </Container>
-            <Feed FeedDataProps={  Data?.feeds} user={Data?.user} />
+            {Data ? <Feed FeedDataProps={Data} /> : <MYSkeleton />}
+
             <Container>
                 <Footer />
             </Container>

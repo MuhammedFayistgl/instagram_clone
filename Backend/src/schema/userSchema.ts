@@ -14,6 +14,7 @@ const UserSchema = new Schema(
                 url: String,
                 duration: Number,
                 seeMore: String,
+                _id: Schema.ObjectId,
                 header: {
                     heading: String,
                     subheading: String,

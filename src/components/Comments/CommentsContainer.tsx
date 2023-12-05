@@ -3,7 +3,7 @@ import { CgLoadbar } from "react-icons/cg";
 import Comment from "./Comment";
 import Like from "../Like/Like";
 import Reply from "../Replys/Reply";
-import StorysProfile from "../Story/StoreysProfile";
+import StoryProfile from "../Story/StoryProfile";
 import { Comments } from "../../types/FeedType";
 
 type CommentProps = {
@@ -11,6 +11,8 @@ type CommentProps = {
 };
 
 const CommentsContainer = ({ comments }: CommentProps) => {
+    console.log('comments',comments);
+    
     return (
         <div>
             <div className=" ">
@@ -24,7 +26,7 @@ const CommentsContainer = ({ comments }: CommentProps) => {
                                 key={i}
                                 className="flex  w-[100%] justify-between px-2">
                                 <span className="flex flex-row gap-2 ">
-                                    <StorysProfile
+                                    <StoryProfile
                                         Profil_Url={itm?.user?.url}
                                         Size="sm"
                                         storyview

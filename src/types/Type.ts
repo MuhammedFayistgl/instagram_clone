@@ -43,6 +43,7 @@ export type ProfilePropsType = {
     Size?: "sm" | "md" | "lg" | "xl";
     storyview: boolean;
     Name?: boolean;
+    statusSlide?: boolean;
 };
 
 export type ReelMetaInfoType = {

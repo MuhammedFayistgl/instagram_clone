@@ -2,7 +2,7 @@ import { Container } from "@mui/material";
 import Headerprofile from "./Headerprofile";
 import Infoprofile from "./Infoprofile";
 import Custombutton from "../../components/Button/Custombutton";
-import Storeys from "../../components/Story/StoreysProfile";
+import Storeys from "../../components/Story/StoryProfile";
 import Infodetealsprofile from "./Infodetealsprofile";
 import TabProfile from "./Tab/TabProfile";
 import { useEffect, useState } from "react";

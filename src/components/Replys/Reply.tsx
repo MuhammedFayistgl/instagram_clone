@@ -1,11 +1,11 @@
 import Like from "../Like/Like";
 import React, { useState } from "react";
 import moment from "moment";
-import StorysProfile from "../Story/StoreysProfile";
+import StoryProfile from "../Story/StoryProfile";
 import { ReplaysEntity } from "../../types/FeedType";
 
 type ReplaysDataProps = {
-    replayData: ReplaysEntity[];
+    replayData: ReplaysEntity[] | undefined | null;
 };
 
 const Reply: React.FC<ReplaysDataProps> = ({ replayData }) => {
@@ -18,11 +18,13 @@ const Reply: React.FC<ReplaysDataProps> = ({ replayData }) => {
                 {Toggle ? "Hide replies" : "view reply"}{" "}
             </div>
             {Toggle &&
-                replayData.map((itm) => {
+                replayData?.map((itm) => {
                     return (
-                        <div key={itm?._id} className="flex  w-[100%] justify-between px-2 ">
+                        <div
+                            key={itm?._id}
+                            className="flex  w-[100%] justify-between px-2 ">
                             <span className="flex flex-row gap-2 ">
-                                <StorysProfile
+                                <StoryProfile
                                     storyview
                                     Profil_Url={itm?.user?.url}
                                     Size="sm"
@@ -40,7 +42,7 @@ const Reply: React.FC<ReplaysDataProps> = ({ replayData }) => {
                                     <div className="text-gray-500 flex  gap-3 ">
                                         {" "}
                                         reply <span>copy</span>{" "}
-                                        <span>see trancilation</span>
+                                        <span>see translation</span>
                                     </div>
                                 </div>
                             </span>

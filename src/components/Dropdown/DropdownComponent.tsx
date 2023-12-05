@@ -59,6 +59,6 @@ const DropdownData = [
     { id: 142, title: "      Download", icon: <MdFileDownload /> },
     { id: 152, title: "       Preview", icon: <LiaTvSolid /> },
     { id: 512, title: "       Hide", icon: <BiSolidHide /> },
-    { id: 212, title: "     About", icon: <FcAbout /> },
+    { id: 272, title: "     About", icon: <FcAbout /> },
     { id: 125, title: "     Report", icon: <MdReport className='text-red-500' /> },
 ];

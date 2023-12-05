@@ -26,94 +26,97 @@ const HomeLayout = lazy(() => import("./Home/HomeLayout"));
 const Layout = () => {
     return (
         <HashRouter>
+            
             <>
                 <div className="flex flex-col h-[100%] overflow-hidden justify-between">
-                    <SlideRoutes>
-                        <Route
-                            path="/chat"
-                            element={
-                                <PrivetRoute>
-                                    <ChatLayout />
-                                </PrivetRoute>
-                            }
-                        />
-                        <Route
-                            path="/authentication"
-                            element={<AuthLayouts />}>
+                 
+                        <SlideRoutes>
                             <Route
-                                path="logIn"
+                                path="/chat"
                                 element={
-                                    <PublicRoute>
-                                        <Login />
-                                    </PublicRoute>
+                                    <PrivetRoute>
+                                        <ChatLayout />
+                                    </PrivetRoute>
                                 }
                             />
                             <Route
-                                path="signUp"
+                                path="/authentication"
+                                element={<AuthLayouts />}>
+                                <Route
+                                    path="logIn"
+                                    element={
+                                        <PublicRoute>
+                                            <Login />
+                                        </PublicRoute>
+                                    }
+                                />
+                                <Route
+                                    path="signUp"
+                                    element={
+                                        <PublicRoute>
+                                            <SignUp />
+                                        </PublicRoute>
+                                    }
+                                />
+                            </Route>
+                            <Route
+                                path="/chat/:user_id"
                                 element={
-                                    <PublicRoute>
-                                        <SignUp />
-                                    </PublicRoute>
+                                    <PrivetRoute>
+                                        <IndividualChatLayout />
+                                    </PrivetRoute>
                                 }
                             />
-                        </Route>
-                        <Route
-                            path="/chat/:user_id"
-                            element={
-                                <PrivetRoute>
-                                    <IndividualChatLayout />
-                                </PrivetRoute>
-                            }
-                        />
-                        <Route
-                            path="/"
-                            element={
-                                <PrivetRoute>
-                                    <HomeLayout />
-                                </PrivetRoute>
-                            }
-                        />
-                        <Route
-                            path="/profile"
-                            element={
-                                <PrivetRoute>
-                                    <MyProfileLayout />
-                                </PrivetRoute>
-                            }
-                        />
-                        <Route
-                            path="/notification"
-                            element={
-                                <PrivetRoute>
-                                    <NotiLayout />
-                                </PrivetRoute>
-                            }
-                        />
-                        <Route
-                            path="/reels"
-                            element={
-                                <PrivetRoute>
-                                    <ReelsLayout />
-                                </PrivetRoute>
-                            }
-                        />
-                        <Route
-                            path="/search"
-                            element={
-                                <PrivetRoute>
-                                    <SearchLayout />
-                                </PrivetRoute>
-                            }
-                        />
-                         <Route
-                            path="/settings"
-                            element={
-                                <PrivetRoute>
-                                    <SettingLayout />
-                                </PrivetRoute>
-                            }
-                        />
-                    </SlideRoutes>
+                            <Route
+                                path="/"
+                                element={
+                                    <PrivetRoute>
+                                        <HomeLayout />
+                                    </PrivetRoute>
+                                }
+                            />
+                            <Route
+                                path="/profile"
+                                element={
+                                    <PrivetRoute>
+                                        <MyProfileLayout />
+                                    </PrivetRoute>
+                                }
+                            />
+                            <Route
+                                path="/notification"
+                                element={
+                                    <PrivetRoute>
+                                        <NotiLayout />
+                                    </PrivetRoute>
+                                }
+                            />
+                            <Route
+                                path="/reels"
+                                element={
+                                    <PrivetRoute>
+                                        <ReelsLayout />
+                                    </PrivetRoute>
+                                }
+                            />
+                            <Route
+                                path="/search"
+                                element={
+                                    <PrivetRoute>
+                                        <SearchLayout />
+                                    </PrivetRoute>
+                                }
+                            />
+                            <Route
+                                path="/settings"
+                                element={
+                                    <PrivetRoute>
+                                        <SettingLayout />
+                                    </PrivetRoute>
+                                }
+                            />
+                        </SlideRoutes>
+                  
                 </div>
             </>
         </HashRouter>

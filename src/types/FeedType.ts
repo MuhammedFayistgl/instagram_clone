@@ -33,7 +33,7 @@ export type FeedDataType = {
 //     }[];
 // }[];
 export interface FeedData {
-    feeds: feeds;
+    feeds: feeds[];
     user: user;
 }
 export interface Comments {

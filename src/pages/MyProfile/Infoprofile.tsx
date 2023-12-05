@@ -1,4 +1,4 @@
-import StorysProfile from "../../components/Story/StoreysProfile";
+import StorysProfile from "../../components/Story/StoryProfile";
 
 type InfoprofileProps = {
     userName: string |undefined;
