@@ -775,6 +775,15 @@ Route.get("/instagram-user-profile-details", async (req, res) => {
         res.send(error);
     }
 });
+Route.get("/instagram-user", async (req, res) => {
+    //  eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const newreel: any = [];
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const randomFeeds = (await userSchema.find()).forEach((data) =>
+        newreel.push({ user: data.user })
+    );
+    res.send(newreel);
+});
 //  post
 Route.post("/create-User-with-userName", async (req) => {
     const { uid, UserName } = req.body;

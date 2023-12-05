@@ -14,6 +14,7 @@ import { getAxiosinstance } from "../../utils/getAxiosinstance";
 import { AllStoryDataTypeClient } from "../../types/Story/StoryType";
 import { useSelector } from "react-redux";
 import StorySkeleton from "../Skeleton/StorySkeleton";
+import { user } from "../../types/ProfileType";
 
 const StoryProfile = ({
     Profil_Url,
@@ -29,11 +30,20 @@ const StoryProfile = ({
     // const [openStory, setOpenStory] = useState<Storytype>();
     const [open, setOpen] = useState(false);
     const [story, setStory] = useState<AllStoryDataTypeClient[]>();
+    const [user, setUser] = useState<user>();
 
     console.log("story", story);
-    console.log("open", open);
+    console.log("user", user);
 
     useEffect(() => {
+        try {
+            getAxiosinstance("/instagram-user").then((data) => {
+                setUser(data.data[0].user);
+            });
+        } catch (error) {
+            throw new Error("Something wrong!!");
+        }
+
         if (!story) {
             getAxiosinstance("/instagram-random-story").then((data) =>
                 setStory(data.data)
@@ -163,7 +173,11 @@ const StoryProfile = ({
                     }
                 }}>
                 {!statusSlide && (
-                    <Avatar alt={alt} src={Profil_Url} sx={size} />
+                    <Avatar
+                        alt={alt}
+                        src={Profil_Url ? Profil_Url : user?.url}
+                        sx={size}
+                    />
                 )}
             </div>
 

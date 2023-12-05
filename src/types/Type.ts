@@ -38,7 +38,7 @@ export interface UserfeedsType {
 export type RootState = ReturnType<typeof Store.getState>;
 
 export type ProfilePropsType = {
-    Profil_Url: string | undefined;
+    Profil_Url?: string | undefined;
     alt?: string;
     Size?: "sm" | "md" | "lg" | "xl";
     storyview: boolean;
