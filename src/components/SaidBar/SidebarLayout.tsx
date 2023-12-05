@@ -12,6 +12,8 @@ import { useNavigate } from "react-router-dom";
 
 const SidebarLayout: React.FC = () => {
     const Navigation = useNavigate();
+
+    
     return (
         <div className="overflow-y-scroll fixed w-[20%] h-full">
             <Container>
@@ -85,7 +87,7 @@ const SideData = [
     {
         id: 983546,
         label: "Profile",
-        icon: <StoryProfile  Size="sm" />,
+        icon: <StoryProfile Size="sm" />,
         onclickUri: "/profile",
     },
 ];

@@ -7,11 +7,15 @@ import { setUser } from "../../redux/userSlice";
 import Cookies from "universal-cookie";
 import SidebarLayout from "../../components/SaidBar/SidebarLayout";
 import SuggestedRoot from "../../components/SuggestedList/SuggestedRoot";
+import { useWindowSize } from "@react-hook/window-size";
 
 type PrivetRouteProps = {
     children?: ReactNode;
 };
 const PrivetRoute: React.FC<PrivetRouteProps> = (Props) => {
+    const [width] = useWindowSize();
+
+    
     const cookies = new Cookies(null, { path: "/" });
     const { user } = useSelector((state) => state);
     console.log("s", user?.user);
@@ -50,15 +54,22 @@ const PrivetRoute: React.FC<PrivetRouteProps> = (Props) => {
     if (localStorage.getItem("uid")) {
         return (
             <>
-                <div className="flex flex-row ">
-                    <div className="w-[20%] ">
-                        <SidebarLayout />
+                {width > 412 ? (
+                    <div className="flex flex-row ">
+                        <div className="w-[20%] ">
+                            <SidebarLayout />
+                        </div>
+                        <span className="w-[50%]">
+                            {" "}
+                            {Props.children}
+                        </span>
+                        <div className="w-[30%]">
+                            <SuggestedRoot />
+                        </div>
                     </div>
-                    <span className="w-[50%]"> {Props.children}</span>
-                    <div className="w-[30%]">
-                        <SuggestedRoot />
-                    </div>
-                </div>
+                ) : (
+                    <>{Props.children}</>
+                )}
             </>
         );
     } else {
