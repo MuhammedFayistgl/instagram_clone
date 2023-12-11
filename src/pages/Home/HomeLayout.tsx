@@ -4,32 +4,29 @@ import StoryProfile from "../../components/Story/StoryProfile";
 import Feed from "../../components/Main/Feed";
 import Footer from "../../components/Footer/Footer";
 import { getData } from "../../utils/getData";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FeedData } from "../../types/FeedType";
 import MYSkeleton from "../../components/Skeleton/MYSkeleton";
+import { useQuery } from "react-query";
 
 const HomeLayout = () => {
     const [Data, setData] = useState<FeedData>();
-    useEffect(() => {
-        !Data &&
-            getData("/instagram-random-feed").then((data) =>
-                setData(data.data[0])
-            );
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-    console.log("data", Data);
 
+    const { isLoading, error, data } = useQuery("repoData", () =>
+        getData("/instagram-random-feed").then((res) =>
+            setData(res.data)
+        )
+    );
+    console.log(" isLoading, error, data", isLoading, error, Data);
     return (
         <>
             <Container>
                 <Header />
-                <StoryProfile
-                    Profil_Url="https://picsum.photos/500/700"
-                    storyview
-                    Name
-                    statusSlide
-                />
+                <StoryProfile storyview Name statusSlide />
             </Container>
+
+        
+
             {Data ? <Feed FeedDataProps={Data} /> : <MYSkeleton />}
 
             <Container>

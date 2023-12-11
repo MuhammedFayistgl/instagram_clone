@@ -32,11 +32,10 @@ const MyProfileLayout = () => {
         <>
             <Container>
                 <Headerprofile
-                    userName={profileData?.[0]?.user.USER_NAME}
+                    
                 />
                 <div className="flex justify-between pt-8 items-center">
                     <Infoprofile
-                        userName={profileData?.[0]?.user.USER_NAME}
                         description={
                             profileData?.[0]?.user.description
                         }
@@ -59,7 +58,7 @@ const MyProfileLayout = () => {
                 <Storeys
                     storyview
                     Name
-                    Profil_Url={profileData?.[0]?.user?.url}
+                  
                 />
             </Container>
             <div className="mt-3">

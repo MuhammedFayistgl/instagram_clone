@@ -709,13 +709,12 @@ Route.post("/upload", async (req, res) => {
 });
 
 Route.get("/instagram-random-feed", async (req, res) => {
-    //  eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const newreel: any = [];
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const randomFeeds = (await userSchema.find()).forEach((data) =>
-        newreel.push({ feeds: [...data.feed], user: data.user })
-    );
-    res.send(newreel);
+
+  const data = await  userSchema
+        .find()
+        .then((doc) => doc.map((user) => { return {user:user.user, feed:user.feed}})).then((doc)=> doc.reverse())
+
+    res.send(data);
 });
 
 Route.get("/instagram-random-story", async (req, res) => {
@@ -724,19 +723,19 @@ Route.get("/instagram-random-story", async (req, res) => {
     const array: any = [];
     instaRandomFeed.filter((feed, index) => {
         array.push({
-            user: feed.user?.uid,
+            user: feed?.user?.uid,
             STORY: [
                 {
                     header: {
-                        heading: feed.user?.USER_NAME,
+                        heading: feed?.user?.USER_NAME,
                         subheading:
-                            feed.STORY[index].header?.subheading,
-                        profileImage: feed.user?.url,
+                            feed?.STORY[index]?.header?.subheading,
+                        profileImage: feed?.user?.url,
                     },
-                    url: feed.STORY[index].url,
-                    duration: feed.STORY[index].duration,
-                    seeMore: feed.STORY[index].seeMore,
-                    _id: feed.STORY[index]._id,
+                    url: feed?.STORY[index]?.url,
+                    duration: feed?.STORY[index]?.duration,
+                    seeMore: feed?.STORY[index]?.seeMore,
+                    _id: feed?.STORY[index]?._id,
                 },
             ],
         });
@@ -844,4 +843,14 @@ Route.post(
     }
 );
 
+Route.get("/get-my-username", async (req, res) => {
+    const uid = req?.headers?.authorization?.split(" ")[1];
+    const userName = await userSchema
+        .findOne({
+            "user.uid": { $in: uid },
+        })
+        .then((doc) => doc?.user?.USER_NAME);
+
+    res.send(userName);
+});
 export default Route;

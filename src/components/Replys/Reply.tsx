@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import moment from "moment";
 import StoryProfile from "../Story/StoryProfile";
 import { ReplaysEntity } from "../../types/FeedType";
+import UserName from "../newComp/UserName/UserName";
 
 type ReplaysDataProps = {
     replayData: ReplaysEntity[] | undefined | null;
@@ -31,7 +32,7 @@ const Reply: React.FC<ReplaysDataProps> = ({ replayData }) => {
                                 />
                                 <div className="flex flex-col">
                                     <div>
-                                        {itm?.user?.USER_NAME}{" "}
+                                        <UserName VerifiedIcon userNameIs={itm?.user?.USER_NAME}/>
                                         <span className="text-gray-400">
                                             {moment(
                                                 Number(itm?.timestamp)

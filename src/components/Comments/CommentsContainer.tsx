@@ -16,7 +16,7 @@ const CommentsContainer = ({ comments }: CommentProps) => {
     return (
         <div>
             <div className=" ">
-                <div className=" flex justify-center  flex-col items-center">
+                <div className=" flex justify-center  flex-col items-center overflow-y-scroll">
                     <CgLoadbar className={"text-lg  "} />
                     <div className="">Comments</div>
                     <Divider />

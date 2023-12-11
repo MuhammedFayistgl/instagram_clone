@@ -14,11 +14,9 @@ type PrivetRouteProps = {
 };
 const PrivetRoute: React.FC<PrivetRouteProps> = (Props) => {
     const [width] = useWindowSize();
-
     
     const cookies = new Cookies(null, { path: "/" });
     const { user } = useSelector((state) => state);
-    console.log("s", user?.user);
 
     const Dispatch = useDispatch();
     const navigate = useNavigate();

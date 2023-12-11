@@ -33,7 +33,7 @@ export type FeedDataType = {
 //     }[];
 // }[];
 export interface FeedData {
-    feeds: feeds[];
+    feed: feed[];
     user: user;
 }
 export interface Comments {
@@ -53,7 +53,7 @@ export interface ReplaysEntity {
     _id: string;
 }
 
-export interface feeds {
+export interface feed {
     comments: Comments[];
     FEED_URL: string;
     _id: string;

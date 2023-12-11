@@ -1,23 +1,23 @@
 import StorysProfile from "../../components/Story/StoryProfile";
+import UserName from "../../components/newComp/UserName/UserName";
 
 type InfoprofileProps = {
-    userName: string |undefined;
     description:string |undefined;
 };
 
-const Infoprofile = ({ userName ,description }: InfoprofileProps) => {
+const Infoprofile = ({description }: InfoprofileProps) => {
     return (
         <>
             <div>
                 <div className="pb-6 ">
                     <StorysProfile
                         storyview
-                        Profil_Url="https://picsum.photos/500/700"
+
                         Size="xl"
                     />
                 </div>
 
-                <div>{userName} </div>
+                <div><UserName/> </div>
                 <div>{description}</div>
             </div>
         </>

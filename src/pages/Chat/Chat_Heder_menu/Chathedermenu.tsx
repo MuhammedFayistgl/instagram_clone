@@ -13,7 +13,7 @@ const Chathedermenu = () => {
             <span className='text-lg font-mono '>
                 <span className='flex items-center gap-2'>
                     <BsArrowLeft className=' text-2xl cursor-pointer' onClick={() => Navigate(-1)} />
-                    <Namebutton Username='fayi_elm' />
+                    <Namebutton  />
 
                 </span>
             </span>

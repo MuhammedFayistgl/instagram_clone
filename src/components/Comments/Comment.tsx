@@ -1,6 +1,7 @@
 import React from "react";
 import moment from "moment";
 import { User } from "../../types/FeedType";
+import UserName from "../newComp/UserName/UserName";
 
 type CommentDataProps = {
     commentData: string;
@@ -17,7 +18,7 @@ const Comment: React.FC<CommentDataProps> = ({
         <>
             <div className="flex flex-col">
                 <div>
-                    {commentOwner?.USER_NAME}{" "}
+                    <UserName VerifiedIcon userNameIs={commentOwner?.USER_NAME} />
                     <span className="text-gray-400">
                         {moment(Number(timestamp)).fromNow()}
                     </span>

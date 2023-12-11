@@ -20,7 +20,6 @@
 
 /* login css */
 
-
 body,
 button,
 input {
@@ -29,7 +28,6 @@ input {
     font-size: 14px;
     line-height: 18px;
 }
-
 
 article,
 section,
@@ -49,7 +47,7 @@ footer {
     -moz-box-orient: vertical;
     -webkit-box-direction: normal;
     -moz-box-direction: normal;
-} 
+}
 /* <--Universal Selectors End */
 
 /* #root {
@@ -110,7 +108,7 @@ footer {
 }
 
 .login-box {
-    background:inherit;
+    background: inherit;
     border: 1px solid #e6e6e6;
     border-radius: 1px;
     margin: 0 0 10px;
@@ -381,3 +379,25 @@ span.language {
         -moz-box-pack: center;
     }
 }
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #878787 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background:inherit;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #878787;
+    border-radius: 0px;
+    border: 1px none inherit;
+  }
