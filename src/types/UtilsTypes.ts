@@ -5,3 +5,9 @@ export type ReelsProps = {
 export type ImagelistProps = {
     variants?: 'masonry' | 'quilted' | 'standard' | 'woven' | 'string'
 }
+
+
+export type stateStoryProfileType = {
+    open: boolean;
+    dataID: string | undefined;
+};

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Request, Response, Router } from "express";
 import userSchema from "../schema/userSchema";
 
@@ -709,41 +710,166 @@ Route.post("/upload", async (req, res) => {
 });
 
 Route.get("/instagram-random-feed", async (req, res) => {
-
-  const data = await  userSchema
+    const data = await userSchema
         .find()
-        .then((doc) => doc.map((user) => { return {user:user.user, feed:user.feed}})).then((doc)=> doc.reverse())
+        .then((doc) =>
+            doc.map((user) => {
+                return { user: user.user, feed: user.feed };
+            })
+        )
+        .then((doc) => doc.reverse());
 
     res.send(data);
 });
 
 Route.get("/instagram-random-story", async (req, res) => {
-    const instaRandomFeed = await userSchema.find();
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const array: any = [];
-    instaRandomFeed.filter((feed, index) => {
-        array.push({
-            user: feed?.user?.uid,
-            STORY: [
-                {
-                    header: {
-                        heading: feed?.user?.USER_NAME,
-                        subheading:
-                            feed?.STORY[index]?.header?.subheading,
-                        profileImage: feed?.user?.url,
-                    },
-                    url: feed?.STORY[index]?.url,
-                    duration: feed?.STORY[index]?.duration,
-                    seeMore: feed?.STORY[index]?.seeMore,
-                    _id: feed?.STORY[index]?._id,
-                },
-            ],
+    await userSchema.find().then((doc) => {
+        doc.forEach((feed) => {
+            array.push({
+                user: feed?.user?.uid,
+                STORY: [
+                    feed?.STORY?.map((doc) => {
+                        return {
+                            header: {
+                                heading: feed?.user?.USER_NAME,
+                                subheading: doc?.header?.subheading,
+                                profileImage: feed?.user?.url,
+                            },
+                            url: doc?.url,
+                            duration: doc?.duration,
+                            seeMore: doc?.seeMore,
+                            _id: doc?._id,
+                        };
+                    }),
+                ],
+            });
         });
     });
-    // console.log(array);
-
     res.send(array);
+    // console.log(array);
 });
+Route.get( "/instagram-random-story-only-status-view",
+    async (req, res) => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const array: any = [];
+        await userSchema.find().then((doc) => {
+            doc.forEach((feed) => {
+                array.push({
+                    user: feed?.user?.uid,
+                    STORY: [
+                        feed?.STORY?.map((doc) => {
+                            return {
+                                header: {
+                                    heading: feed?.user?.USER_NAME,
+                                    subheading:
+                                        doc?.header?.subheading,
+                                    profileImage: feed?.user?.url,
+                                },
+                                url: doc?.url,
+                                duration: doc?.duration,
+                                seeMore: doc?.seeMore,
+                                _id: doc?._id,
+                            };
+                        }),
+                    ],
+                });
+            });
+        });
+
+        try {
+         const newArry =   [...array]
+                ?.map((doc) => doc?.STORY?.flat(1))
+                .map((doc) =>
+                    doc
+                        ?.map((doc:{
+                            header: any;_id:string ; url:string ; name: string|undefined
+}) => {
+                            return {
+                                _id: doc?._id,
+                                url: doc?.url,
+                                name: doc?.header?.heading,
+                            };
+                        })
+                        .filter((doc: { name: any; }, index: any, arr: any[]) => {
+                            return (
+                                index ===
+                                arr.findIndex(
+                                    (o) => doc?.name === o?.name
+                                )
+                            );
+                        })
+                );
+                res.send(newArry);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+);
+Route.get( "/instagram-random-story-only-status-with-id",
+    async (req, res) => {
+
+        console.log('+++',req.body);
+        
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+//         const array: any = [];
+//         await userSchema.find().then((doc) => {
+//             doc.forEach((feed) => {
+//                 array.push({
+//                     user: feed?.user?.uid,
+//                     STORY: [
+//                         feed?.STORY?.map((doc) => {
+//                             return {
+//                                 header: {
+//                                     heading: feed?.user?.USER_NAME,
+//                                     subheading:
+//                                         doc?.header?.subheading,
+//                                     profileImage: feed?.user?.url,
+//                                 },
+//                                 url: doc?.url,
+//                                 duration: doc?.duration,
+//                                 seeMore: doc?.seeMore,
+//                                 _id: doc?._id,
+//                             };
+//                         }),
+//                     ],
+//                 });
+//             });
+//         });
+
+//         try {
+//          const newArry =   [...array]
+//                 ?.map((doc) => doc?.STORY?.flat(1))
+//                 .map((doc) =>
+//                     doc
+//                         ?.map((doc:{
+//                             header: any;_id:string ; url:string ; name: string|undefined
+// }) => {
+//                             return {
+//                                 _id: doc?._id,
+//                                 url: doc?.url,
+//                                 name: doc?.header?.heading,
+//                             };
+//                         })
+//                         .filter((doc: { name: any; }, index: any, arr: any[]) => {
+//                             return (
+//                                 index ===
+//                                 arr.findIndex(
+//                                     (o) => doc?.name === o?.name
+//                                 )
+//                             );
+//                         })
+//                 );
+//                 res.send(newArry);
+//         } catch (error) {
+//             console.log(error);
+//         }
+    }
+);
+
+
+
 Route.get("/instagram-random-reel", async (req, res) => {
     const instaRandomFeed = await userSchema.find();
 

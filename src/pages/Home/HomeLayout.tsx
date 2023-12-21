@@ -10,9 +10,9 @@ import MYSkeleton from "../../components/Skeleton/MYSkeleton";
 import { useQuery } from "react-query";
 
 const HomeLayout = () => {
-    const [Data, setData] = useState<FeedData>();
+    const [Data, setData] = useState<FeedData[]>();
 
-    const { isLoading, error, data } = useQuery("repoData", () =>
+    const { isLoading, error } = useQuery("repoData", () =>
         getData("/instagram-random-feed").then((res) =>
             setData(res.data)
         )
@@ -24,8 +24,6 @@ const HomeLayout = () => {
                 <Header />
                 <StoryProfile storyview Name statusSlide />
             </Container>
-
-        
 
             {Data ? <Feed FeedDataProps={Data} /> : <MYSkeleton />}
 
