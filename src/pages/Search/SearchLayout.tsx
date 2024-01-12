@@ -10,7 +10,7 @@ import { getAxiosinstance } from "../../utils/getAxiosinstance";
 const SearchLayout = () => {
     const [profileData, setProfileData] =
         useState<ProfileDataType[]>();
-    // const {USER_NAME,uid,url,feeds} = profileData[0]
+
     console.log("p", profileData);
 
     useEffect(() => {
@@ -29,7 +29,7 @@ const SearchLayout = () => {
                     <Search />
                 </span>
             </Container>
-            <ImagelistProfile imageList={profileData?.[0]?.feeds} />
+            <ImagelistProfile  />
             <Footer />
         </>
     );

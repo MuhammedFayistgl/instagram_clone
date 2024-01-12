@@ -30,6 +30,7 @@ const CommentsContainer = ({ comments }: CommentProps) => {
                                         Profil_Url={itm?.user?.url}
                                         Size="sm"
                                         storyview
+                                        uid={itm?.user?.uid}
                                     />
 
                                     <div>

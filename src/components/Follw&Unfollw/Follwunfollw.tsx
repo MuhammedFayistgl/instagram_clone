@@ -3,7 +3,7 @@ import { Button } from "rsuite";
 
 const Follwunfollw = () => {
     const [action, setAction] = useState(false);
-    const [loading, setLoading] = useState(false);
+    const [loading] = useState(false);
     return (
         <div>
             <h5 className="text-blue-500">

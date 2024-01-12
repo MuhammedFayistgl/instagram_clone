@@ -1,38 +1,36 @@
-
-import { AiOutlineCamera } from 'react-icons/ai'
-import { Badge, Container } from 'rsuite'
-import StorysProfile from '../../components/Story/StoryProfile'
-import { useNavigate } from 'react-router-dom'
-import { USER } from '../../Data/Data'
+import { AiOutlineCamera } from "react-icons/ai";
+import { Badge, Container } from "rsuite";
+import StorysProfile from "../../components/Story/StoryProfile";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "../../types/Type";
 
 const Chat = () => {
-    const Navigate = useNavigate()
+    const { user } = useSelector((state: RootState) => state.userDataSlice.Details);
+    const Navigate = useNavigate();
     return (
-        <div className='flex justify-center '>
+        <div className="flex justify-center ">
             <Container>
-                {USER?.map((user) => {
-                    return (
-                        <div className='flex justify-around pb-5'>
-                            <span className='flex'>
-                                <span className='pr-3'>
-                                    <StorysProfile storyview Size='md' alt='profileImg' />
-                                </span>
-                                <span onClick={() => Navigate(`${user.id}`,{state:user})} >
-                                    <div>{user.USER_NAME}</div>
-                                    <div><span>4+ new message </span> <span className=''>16 h</span></div>
-                                </span>
-                            </span>
-                            <Badge />
-                            <span className='text-2xl'><AiOutlineCamera /></span>
-                        </div>
-                    )
-                })}
-
-
-
+                <div className="flex justify-around pb-5">
+                    <span className="flex">
+                        <span className="pr-3">
+                            <StorysProfile uid={user?.uid} storyview Size="md" alt="profileImg" />
+                        </span>
+                        <span onClick={() => Navigate(`${user.uid}`, { state: user })}>
+                            <div>{user.USER_NAME}</div>
+                            <div>
+                                <span>4+ new message </span> <span className="">16 h</span>
+                            </div>
+                        </span>
+                    </span>
+                    <Badge />
+                    <span className="text-2xl">
+                        <AiOutlineCamera />
+                    </span>
+                </div>
             </Container>
         </div>
-    )
-}
+    );
+};
 
-export default Chat
+export default Chat;

@@ -1,4 +1,4 @@
-import React from "react";
+
 import MYSkeleton from "./MYSkeleton";
 
 const SkeletonLayout = () => {

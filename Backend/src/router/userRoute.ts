@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Request, Response, Router } from "express";
 import userSchema from "../schema/userSchema";
+import mongoose from "mongoose";
 
 const Route = Router();
 
@@ -391,8 +392,7 @@ Route.post("/upload", async (req, res) => {
             ],
             feed: [
                 {
-                    FEED_URL:
-                        "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+                    FEED_URL: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
 
                     comments: [
                         {
@@ -454,8 +454,7 @@ Route.post("/upload", async (req, res) => {
                     Like: [""],
                 },
                 {
-                    FEED_URL:
-                        "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
+                    FEED_URL: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
 
                     comments: [
                         {
@@ -553,8 +552,7 @@ Route.post("/upload", async (req, res) => {
                     Like: [""],
                 },
                 {
-                    FEED_URL:
-                        "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
+                    FEED_URL: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
                     timestamp: "1699430228768",
                     comments: [
                         {
@@ -612,8 +610,7 @@ Route.post("/upload", async (req, res) => {
                     Like: [""],
                 },
                 {
-                    FEED_URL:
-                        "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
+                    FEED_URL: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
 
                     comments: [
                         {
@@ -750,125 +747,48 @@ Route.get("/instagram-random-story", async (req, res) => {
     res.send(array);
     // console.log(array);
 });
-Route.get( "/instagram-random-story-only-status-view",
-    async (req, res) => {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const array: any = [];
-        await userSchema.find().then((doc) => {
-            doc.forEach((feed) => {
-                array.push({
-                    user: feed?.user?.uid,
-                    STORY: [
-                        feed?.STORY?.map((doc) => {
-                            return {
-                                header: {
-                                    heading: feed?.user?.USER_NAME,
-                                    subheading:
-                                        doc?.header?.subheading,
-                                    profileImage: feed?.user?.url,
-                                },
-                                url: doc?.url,
-                                duration: doc?.duration,
-                                seeMore: doc?.seeMore,
-                                _id: doc?._id,
-                            };
-                        }),
-                    ],
-                });
-            });
-        });
+Route.get("/instagram-random-story-only-status-view", async (req, res) => {
+    try {
+        const array = await userSchema.aggregate([
+            {
+                $project: {
+                    name: "$user.USER_NAME",
+                    uid: "$user.uid",
+                    url: "$user.url",
+                    _id: "$_id",
+                },
+            },
+        ]);
 
-        try {
-         const newArry =   [...array]
-                ?.map((doc) => doc?.STORY?.flat(1))
-                .map((doc) =>
-                    doc
-                        ?.map((doc:{
-                            header: any;_id:string ; url:string ; name: string|undefined
-}) => {
-                            return {
-                                _id: doc?._id,
-                                url: doc?.url,
-                                name: doc?.header?.heading,
-                            };
-                        })
-                        .filter((doc: { name: any; }, index: any, arr: any[]) => {
-                            return (
-                                index ===
-                                arr.findIndex(
-                                    (o) => doc?.name === o?.name
-                                )
-                            );
-                        })
-                );
-                res.send(newArry);
-        } catch (error) {
-            console.log(error);
-        }
+        res.send(array);
+    } catch (error) {
+        console.log(error);
     }
-);
-Route.get( "/instagram-random-story-only-status-with-id",
-    async (req, res) => {
-
-        console.log('+++',req.body);
-        
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-//         const array: any = [];
-//         await userSchema.find().then((doc) => {
-//             doc.forEach((feed) => {
-//                 array.push({
-//                     user: feed?.user?.uid,
-//                     STORY: [
-//                         feed?.STORY?.map((doc) => {
-//                             return {
-//                                 header: {
-//                                     heading: feed?.user?.USER_NAME,
-//                                     subheading:
-//                                         doc?.header?.subheading,
-//                                     profileImage: feed?.user?.url,
-//                                 },
-//                                 url: doc?.url,
-//                                 duration: doc?.duration,
-//                                 seeMore: doc?.seeMore,
-//                                 _id: doc?._id,
-//                             };
-//                         }),
-//                     ],
-//                 });
-//             });
-//         });
-
-//         try {
-//          const newArry =   [...array]
-//                 ?.map((doc) => doc?.STORY?.flat(1))
-//                 .map((doc) =>
-//                     doc
-//                         ?.map((doc:{
-//                             header: any;_id:string ; url:string ; name: string|undefined
-// }) => {
-//                             return {
-//                                 _id: doc?._id,
-//                                 url: doc?.url,
-//                                 name: doc?.header?.heading,
-//                             };
-//                         })
-//                         .filter((doc: { name: any; }, index: any, arr: any[]) => {
-//                             return (
-//                                 index ===
-//                                 arr.findIndex(
-//                                     (o) => doc?.name === o?.name
-//                                 )
-//                             );
-//                         })
-//                 );
-//                 res.send(newArry);
-//         } catch (error) {
-//             console.log(error);
-//         }
-    }
-);
-
-
+});
+Route.post("/instagram-random-story-only-status-with-id", async (req: Request, res: Response) => {
+    const { id } = req.body;
+    const array = await userSchema.aggregate([
+        {
+            $match: {
+                "user.uid": id,
+            },
+        },
+        {
+            $project: {
+                header: {
+                    heading: "$user.USER_NAME",
+                    subheading: "posted 30s ago",
+                    profileImage: "$user.url",
+                },
+                url: "$Stories",
+                duration: 5000,
+                seeMore: "seeMore",
+                _id: new mongoose.Types.ObjectId(),
+            },
+        },
+    ]);
+    res.send(array);
+});
 
 Route.get("/instagram-random-reel", async (req, res) => {
     const instaRandomFeed = await userSchema.find();
@@ -876,38 +796,43 @@ Route.get("/instagram-random-reel", async (req, res) => {
     const REELS = instaRandomFeed.filter((feed) => feed.REELS);
     res.send(REELS);
 });
-Route.get("/instagram-user-profile-details", async (req, res) => {
+Route.get("/instagram-user-on-feeds", async (req, res) => {
+    const uid = req?.headers?.authorization?.split(" ")[1];
     try {
-        const uid = req?.headers?.authorization?.split(" ")[1];
-        const userinformation = await userSchema.findOne({
-            "user.uid": { $in: uid },
-        });
-
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const newArray: any = [];
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const data = userinformation?.feed.forEach((data) =>
-            newArray.push(data.FEED_URL)
-        );
-        const userProfileData = [
+        const userinformation = await userSchema.aggregate([
             {
-                user: userinformation?.user,
-                feeds: newArray,
+                $match: {
+                    "user.uid": uid,
+                },
             },
-        ];
-        res.send(userProfileData);
+            {
+                $project: {
+                    feeds: "$feed.FEED_URL",
+                    _id: 0,
+                },
+            },
+        ]);
+        const data = userinformation.map((data) => data.feeds).flat(1);
+        res.send(data);
     } catch (error) {
         res.send(error);
     }
 });
 Route.get("/instagram-user", async (req, res) => {
-    //  eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const newreel: any = [];
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const randomFeeds = (await userSchema.find()).forEach((data) =>
-        newreel.push({ user: data.user })
-    );
-    res.send(newreel);
+    const uid = req?.headers?.authorization?.split(" ")[1];
+    const user = await userSchema.aggregate([
+        {
+            $match: {
+                "user.uid": uid,
+            },
+        },
+        {
+            $project: {
+                user: "$user",
+            },
+        },
+    ]);
+    res.send(user);
 });
 //  post
 Route.post("/create-User-with-userName", async (req) => {
@@ -922,30 +847,33 @@ Route.post("/create-User-with-userName", async (req) => {
 
 Route.post(
     "/instagram-user-like",
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    async (req: Request, res: Response) => {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const { Like, targetID } = req.body;
-        // const TargetLikeObj = await userSchema.updateOne({ "feed._id": { $eq: targetID }},{$set:{'feed.Like': Like  }})
-        // const countLike = await userSchema.findOneAndUpdate(
-        //     {
-        //         feed: [{ _id: { $eq: targetID } }],
-        //     },
-        //     { $inc: {"Like": 1 } },
-        //     { upsert: true, new: true }
-        // );
-        // const uid = req?.headers?.authorization?.split(" ")[1];
-        // const countLike = await userSchema.updateOne(
-        //     {
-        //         "feed.FEED_URL":
-        //             "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
-        //     },
-        //     { $inc: { "feed.$.Like": ';lkjfdglkdj' } },
 
-        // );
-
-        console.log("Unlike, targetID", Like, targetID);
-        // console.log("countLike", countLike);
+    async (req: Request) => {
+        const { uid, targetID } = req.body;
+        const TargetLikeObj = await userSchema.aggregate([
+            {
+                $match: {
+                    "user.uid": uid,
+                },
+            },
+            {
+                $unwind: "$feed",
+            },
+            {
+                $match: {
+                    "feed._id": targetID,
+                },
+            },
+            {
+                $addFields: {
+                    "feed.Like": {
+                        $add: ["$feed.Like", +1],
+                    },
+                },
+            },
+        ]);
+        console.log("Unlike, targetID", uid, targetID);
+        console.log("TargetLikeObj", TargetLikeObj);
     }
 );
 Route.post(

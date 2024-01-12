@@ -1,15 +1,14 @@
-import React from "react";
-import { user } from "../../types/ProfileType";
-type userProps = {
-    user: user | undefined;
-    postLength: number | undefined;
-};
-const Infodetealsprofile = ({ user, postLength }: userProps) => {
+import { useSelector } from "react-redux";
+import { RootState } from "../../types/Type";
+
+const Infodetealsprofile = () => {
+    const { onFeeds } = useSelector((state: RootState) => state.userDataSlice.Details);
+    const { user } = useSelector((state: RootState) => state.userDataSlice.Details);
     return (
         <>
             <div className="flex gap-7 ">
                 <span className="text-center">
-                    {postLength}
+                    {onFeeds.length}
                     <div>Post</div>
                 </span>
                 <span className="text-center">

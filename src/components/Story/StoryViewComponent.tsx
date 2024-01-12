@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
@@ -6,24 +6,25 @@ import "slick-carousel/slick/slick-theme.css";
 import { Avatar } from "@mui/material";
 import { getAxiosinstance } from "../../utils/getAxiosinstance";
 import StorySkeleton from "../Skeleton/StorySkeleton";
-import { stateStoryProfileType } from "../../types/UtilsTypes";
+import { useDispatch } from "react-redux";
+import { setShowStory } from "../../redux/StorySlice";
+
 type DataType = {
     _id: string;
     url: string;
     name: string;
+    uid: string;
 }[];
 
 type PropsType = {
-    setOpen: React.Dispatch<React.SetStateAction<stateStoryProfileType>>;
     Name?: boolean | undefined;
     size?: object | undefined;
 };
-const StoryViewComponent = ({
-    setOpen,
-    Name,
-    size,
-}: PropsType) => {
+const StoryViewComponent = ({ Name, size }: PropsType) => {
+    const Dispatch = useDispatch();
     const [data, setData] = useState<DataType[]>();
+    const [loadingID, setLoadingID] = useState<string>();
+
     const settings = {
         dots: true,
         infinite: false,
@@ -77,9 +78,7 @@ const StoryViewComponent = ({
     useEffect(() => {
         if (!data) {
             try {
-                getAxiosinstance(
-                    "/instagram-random-story-only-status-view"
-                ).then((data) => {
+                getAxiosinstance("/instagram-random-story-only-status-view").then((data) => {
                     setData(data.data);
                 });
             } catch (error) {
@@ -87,36 +86,45 @@ const StoryViewComponent = ({
             }
         }
     }, [data]);
-    // const activeStoryFetch = async (id: string) => {
-    //     await getAxiosinstance
-    //         .get("/instagram-random-story-only-status-with-id", id)
-    //         .then((data) => {
-    //             return data.data;
-    //         });
-    // };
-    // console.log("=------------------", activeStoryFetch);
-
-
+    const activeStoryFetch = async () => {
+        if (loadingID) {
+            try {
+                getAxiosinstance
+                    .post("/instagram-random-story-only-status-with-id", { id: loadingID })
+                    .then((data) => {
+                        console.log('data==',data.data);
+                        
+                        Dispatch(setShowStory([data?.data[0]]));
+                    })
+                    .catch((err) => console.log(err));
+            } catch (error) {
+                console.log(error);
+            }
+        }
+    };
     return (
         <div className="">
             {data ? (
                 <Slider {...settings}>
                     {data?.flat(1).map((itm) => {
                         return (
-                            <div className="  pl-3" key={itm?.url}>
+                            <div className="  pl-3 py-3" key={itm?._id}>
                                 <span
                                     onClick={() => {
-                                        setOpen({open:true,dataID:itm?._id});
+                                        if (itm.uid) {
+                                            setLoadingID(itm?.uid), activeStoryFetch();
+                                        }
                                     }}>
-                                    <Avatar
-                                        src={itm?.url}
-                                        sx={size}
-                                    />
-                                    {Name && (
-                                        <span className="">
-                                            {itm?.name.slice(0, 6)}
+                                    <div className="stories-animation-container">
+                                        <div
+                                            className={` stories-animation ${
+                                                loadingID === itm?._id && `stories-animation-toggle`
+                                            }  `}></div>
+                                        <span className="  stories-animation-image">
+                                            <Avatar src={itm?.url} sx={size} />
                                         </span>
-                                    )}
+                                    </div>
+                                    {Name && <span className="">{itm?.name?.slice(0, 6)}</span>}
                                 </span>
                             </div>
                         );

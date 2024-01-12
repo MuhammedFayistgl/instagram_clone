@@ -1,4 +1,4 @@
-import React from "react";
+
 import HeaderSettings from "./HeaderSettings";
 import SettingsListLayout from "./SettingsListLayout";
 import { Container } from "@mui/material";

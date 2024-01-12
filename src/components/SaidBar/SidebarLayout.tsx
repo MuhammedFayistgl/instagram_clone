@@ -87,7 +87,7 @@ const SideData = [
     {
         id: 983546,
         label: "Profile",
-        icon: <StoryProfile Size="sm" />,
+        icon: <StoryProfile uid={''} Size="sm" storyview={false}  />,
         onclickUri: "/profile",
     },
 ];

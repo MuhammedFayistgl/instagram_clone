@@ -10,7 +10,6 @@ type UserNameLayout = {
     User: user;
 };
 const UserNameLayout = ({ User }: UserNameLayout) => {
-    console.log("user?.url", User);
 
     return (
         <Container>
@@ -20,6 +19,7 @@ const UserNameLayout = ({ User }: UserNameLayout) => {
                         storyview={true}
                         Size="sm"
                         Profil_Url={User?.url}
+                        uid={User.uid}
                     />
                     <span className="pl-3">
                         <UserName VerifiedIcon userNameIs={User?.USER_NAME} />

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Searchcomponent from '../../components/SerchComp/Searchcomponent'
 
 const Search = () => {

@@ -1,0 +1,1502 @@
+[
+    {
+        "user": {
+            "USER_NAME": "fayis_elm",
+            "uid": "Cc9LHz3ZxbO3gVxoH0ArN5QqIJB3",
+            "Followers": "235",
+            "Following": "84",
+            "description": "good!!",
+            "url": "https://cdn.pixabay.com/photo/2018/08/28/13/29/avatar-3637561_1280.pnghttps://cdn.pixabay.com/photo/2018/08/28/13/29/avatar-3637561_1280.png"
+        },
+        "_id": "654b3f54090f8f1f2ffe2f87",
+        "STORY": [
+            {
+                "header": {
+                    "heading": "y_as_er_T_U..",
+                    "subheading": "Posted 30m ago",
+                    "profileImage": "https://picsum.photos/50/50"
+                },
+                "url": "https://picsum.photos/500/700",
+                "duration": 5000,
+                "seeMore": "seeMore",
+                "_id": "657bb08fc6be2d12bdecf374"
+            },
+            {
+                "header": {
+                    "heading": "Mohit Karekar",
+                    "subheading": "Posted 30m ago",
+                    "profileImage": "https://picsum.photos/50/50"
+                },
+                "url": "https://picsum.photos/500/700",
+                "duration": 5000,
+                "seeMore": "seeMore",
+                "_id": "654b3f54090f8f1f2ffe2f89"
+            }
+        ],
+        "feed": [
+            {
+                "FEED_URL": "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+                "timestamp": "1699430228768",
+                "comments": [
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f8c"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f8b"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f8e"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f8d"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f90"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f8f"
+                    }
+                ],
+                "_id": "654b3f54090f8f1f2ffe2f8a",
+                "Like": [""]
+            },
+            {
+                "FEED_URL": "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
+                "timestamp": "1699430228768",
+                "comments": [
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f93"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f92"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f95"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f94"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f97"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f96"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f99"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f98"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f9b"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f9a"
+                    }
+                ],
+                "_id": "654b3f54090f8f1f2ffe2f91",
+                "Like": [""]
+            },
+            {
+                "FEED_URL": "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
+                "timestamp": "1699430228768",
+                "comments": [
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f9e"
+                            },
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f9f"
+                            },
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2fa0"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f9d"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2fa2"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2fa1"
+                    }
+                ],
+                "_id": "654b3f54090f8f1f2ffe2f9c",
+                "Like": [""]
+            },
+            {
+                "FEED_URL": "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
+                "timestamp": "1699430228768",
+                "comments": [
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2fa5"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2fa4"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2fa7"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2fa6"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2fa9"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2fa8"
+                    }
+                ],
+                "_id": "654b3f54090f8f1f2ffe2fa3",
+                "Like": [""]
+            }
+        ],
+        "REELS": [
+            {
+                "reelInfo": {
+                    "postedBy": {
+                        "avatar": "https://picsum.photos/200/300",
+                        "name": "y_as_er_T_U.."
+                    },
+                    "likes": {
+                        "count": 55
+                    },
+                    "dislikes": {
+                        "count": 5
+                    },
+                    "comments": {
+                        "count": 22
+                    },
+                    "shares": {
+                        "count": 55
+                    },
+                    "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+                    "description": "this is tha best reels"
+                },
+                "_id": "654b3f54090f8f1f2ffe2faa"
+            }
+        ],
+        "createdAt": "2023-11-08T07:57:08.824Z",
+        "updatedAt": "2023-12-13T23:00:39.599Z",
+        "__v": 0
+    },
+    {
+        "user": {
+            "USER_NAME": "Kunji_mon",
+            "uid": "dziW1YPO1iW0brFpoXgEa6cVLMH3",
+            "Followers": "500",
+            "Following": "600",
+            "description": "MERN stack developer",
+            "url": "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
+        },
+        "_id": "6572afa0858c594092fe37d8",
+        "STORY": [
+            {
+                "header": {
+                    "heading": "y_as_er_T_U..",
+                    "subheading": "Posted 30m ago",
+                    "profileImage": "https://picsum.photos/50/50"
+                },
+                "url": "https://images.freeimages.com/images/large-previews/c31/colors-1383652.jpg",
+                "duration": 5000,
+                "seeMore": "seeMore",
+                "_id": "657bb10fc6be2d12bdecf376"
+            },
+            {
+                "header": {
+                    "heading": "Mohit Karekar",
+                    "subheading": "Posted 30m ago",
+                    "profileImage": "https://picsum.photos/50/50"
+                },
+                "url": "https://www.freeimages.com/photo/three-bees-on-sunflower-1337029",
+                "duration": 5000,
+                "seeMore": "seeMore",
+                "_id": "657bb0efc6be2d12bdecf375"
+            }
+        ],
+        "feed": [
+            {
+                "FEED_URL": "https://images.unsplash.com/photo-1495932574959-fa95bc3c4ac8?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "timestamp": "1699430228768",
+                "comments": [
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f8c"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f8b"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f8e"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f8d"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f90"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f8f"
+                    }
+                ],
+                "_id": "654b3f54090f8f1f2ffe2f8a",
+                "Like": [""]
+            },
+            {
+                "FEED_URL": "https://images.unsplash.com/photo-1504714071067-f2880fba258a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "timestamp": "1699430228768",
+                "comments": [
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f93"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f92"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f95"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f94"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f97"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f96"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f99"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f98"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f9b"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f9a"
+                    }
+                ],
+                "_id": "654b3f54090f8f1f2ffe2f91",
+                "Like": [""]
+            },
+            {
+                "FEED_URL": "https://images.unsplash.com/photo-1482784160316-6eb046863ece?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "timestamp": "1699430228768",
+                "comments": [
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f9e"
+                            },
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f9f"
+                            },
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2fa0"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f9d"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2fa2"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2fa1"
+                    }
+                ],
+                "_id": "654b3f54090f8f1f2ffe2f9c",
+                "Like": [""]
+            },
+            {
+                "FEED_URL": "https://images.unsplash.com/photo-1519994007676-baabab4bf574?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "timestamp": "1699430228768",
+                "comments": [
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2fa5"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2fa4"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2fa7"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2fa6"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2fa9"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2fa8"
+                    }
+                ],
+                "_id": "654b3f54090f8f1f2ffe2fa3",
+                "Like": [""]
+            }
+        ],
+        "REELS": [
+            {
+                "reelInfo": {
+                    "postedBy": {
+                        "avatar": "https://picsum.photos/200/300",
+                        "name": "y_as_er_T_U.."
+                    },
+                    "likes": {
+                        "count": 55
+                    },
+                    "dislikes": {
+                        "count": 5
+                    },
+                    "comments": {
+                        "count": 22
+                    },
+                    "shares": {
+                        "count": 55
+                    },
+                    "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+                    "description": "this is tha best reels"
+                },
+                "_id": "654b3f54090f8f1f2ffe2faa"
+            }
+        ],
+        "createdAt": "2023-11-08T07:57:08.824Z",
+        "updatedAt": "2023-11-18T19:22:12.034Z",
+        "__v": 0
+    },
+    {
+        "user": {
+            "USER_NAME": "M_uhamme_d",
+            "uid": "dziW1YPO1jiWegl0brXgEa6cVLMH3",
+            "Followers": "146",
+            "Following": "253",
+            "description": "fullstack developer",
+            "url": "https://images.freeimages.com/images/large-previews/e85/flower-1401225.jpg"
+        },
+        "_id": "65765db364fc1c4640497d25",
+        "STORY": [
+            {
+                "header": {
+                    "heading": "y_as_er_T_U..",
+                    "subheading": "Posted 30m ago",
+                    "profileImage": "https://picsum.photos/50/50"
+                },
+                "url": "https://picsum.photos/500/700",
+                "duration": 5000,
+                "seeMore": "seeMore",
+                "_id": "657bb16ac6be2d12bdecf379"
+            },
+            {
+                "header": {
+                    "heading": "Mohit Karekar",
+                    "subheading": "Posted 30m ago",
+                    "profileImage": "https://picsum.photos/50/50"
+                },
+                "url": "https://picsum.photos/500/700",
+                "duration": 5000,
+                "seeMore": "seeMore",
+                "_id": "657bb174c6be2d12bdecf37a"
+            }
+        ],
+        "feed": [
+            {
+                "FEED_URL": "https://images.freeimages.com/images/large-previews/c0d/gerbera-series-1-1486599.jpg",
+                "timestamp": "1699430228768",
+                "comments": [
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f8c"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f8b"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f8e"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f8d"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f90"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f8f"
+                    }
+                ],
+                "_id": "654b3f54090f8f1f2ffe2f8a",
+                "Like": [""]
+            },
+            {
+                "FEED_URL": "https://images.pexels.com/photos/919278/pexels-photo-919278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                "timestamp": "1699430228768",
+                "comments": [
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f93"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f92"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f95"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f94"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f97"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f96"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f99"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f98"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f9b"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f9a"
+                    }
+                ],
+                "_id": "654b3f54090f8f1f2ffe2f91",
+                "Like": [""]
+            },
+            {
+                "FEED_URL": "https://images.pexels.com/photos/593655/pexels-photo-593655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                "timestamp": "1699430228768",
+                "comments": [
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f9e"
+                            },
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f9f"
+                            },
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2fa0"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f9d"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2fa2"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2fa1"
+                    }
+                ],
+                "_id": "654b3f54090f8f1f2ffe2f9c",
+                "Like": [""]
+            },
+            {
+                "FEED_URL": "https://images.pexels.com/photos/381739/pexels-photo-381739.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                "timestamp": "1699430228768",
+                "comments": [
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2fa5"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2fa4"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2fa7"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2fa6"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2fa9"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2fa8"
+                    }
+                ],
+                "_id": "654b3f54090f8f1f2ffe2fa3",
+                "Like": [""]
+            }
+        ],
+        "REELS": [
+            {
+                "reelInfo": {
+                    "postedBy": {
+                        "avatar": "https://picsum.photos/200/300",
+                        "name": "y_as_er_T_U.."
+                    },
+                    "likes": {
+                        "count": 55
+                    },
+                    "dislikes": {
+                        "count": 5
+                    },
+                    "comments": {
+                        "count": 22
+                    },
+                    "shares": {
+                        "count": 55
+                    },
+                    "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+                    "description": "this is tha best reels"
+                },
+                "_id": "654b3f54090f8f1f2ffe2faa"
+            }
+        ],
+        "createdAt": "2023-11-08T07:57:08.824Z",
+        "updatedAt": "2023-11-18T19:22:12.034Z",
+        "__v": 0
+    },
+    {
+        "user": {
+            "USER_NAME": "Pyar__i",
+            "uid": "dziW1YPO1jiWegl0brXgEa6cVLMH3",
+            "Followers": "146",
+            "Following": "253",
+            "description": "fullstack developer",
+            "url": "https://cdn.pixabay.com/photo/2017/09/29/16/23/zombie-2799591_1280.pnghttps://cdn.pixabay.com/photo/2017/09/29/16/23/zombie-2799591_1280.png"
+        },
+        "_id": "657a31594474ff2cf9189e40",
+        "STORY": [
+            {
+                "header": {
+                    "heading": "y_as_er_T_U..",
+                    "subheading": "Posted 30m ago",
+                    "profileImage": "https://picsum.photos/50/50"
+                },
+                "url": "https://cdn.pixabay.com/photo/2014/08/05/10/31/waiting-410328_640.jpghttps://cdn.pixabay.com/photo/2014/08/05/10/31/waiting-410328_640.jpg",
+                "duration": 5000,
+                "seeMore": "seeMore",
+                "_id": "657bb18fc6be2d12bdecf37b"
+            },
+            {
+                "header": {
+                    "heading": "Mohit Karekar",
+                    "subheading": "Posted 30m ago",
+                    "profileImage": "https://picsum.photos/50/50"
+                },
+                "url": "https://cdn.pixabay.com/photo/2023/10/11/11/42/coast-8308438_1280.jpg",
+                "duration": 5000,
+                "seeMore": "seeMore",
+                "_id": "657bb19dc6be2d12bdecf37c"
+            }
+        ],
+        "feed": [
+            {
+                "FEED_URL": "https://images.freeimages.com/images/large-previews/c0d/gerbera-series-1-1486599.jpg",
+                "timestamp": "1699430228768",
+                "comments": [
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f8c"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f8b"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f8e"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f8d"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f90"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f8f"
+                    }
+                ],
+                "_id": "654b3f54090f8f1f2ffe2f8a",
+                "Like": [""]
+            },
+            {
+                "FEED_URL": "https://images.pexels.com/photos/919278/pexels-photo-919278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                "timestamp": "1699430228768",
+                "comments": [
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f93"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f92"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f95"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f94"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f97"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f96"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f99"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f98"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f9b"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f9a"
+                    }
+                ],
+                "_id": "654b3f54090f8f1f2ffe2f91",
+                "Like": [""]
+            },
+            {
+                "FEED_URL": "https://images.pexels.com/photos/593655/pexels-photo-593655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                "timestamp": "1699430228768",
+                "comments": [
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f9e"
+                            },
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2f9f"
+                            },
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2fa0"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2f9d"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2fa2"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2fa1"
+                    }
+                ],
+                "_id": "654b3f54090f8f1f2ffe2f9c",
+                "Like": [""]
+            },
+            {
+                "FEED_URL": "https://images.pexels.com/photos/381739/pexels-photo-381739.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                "timestamp": "1699430228768",
+                "comments": [
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2fa5"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2fa4"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2fa7"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2fa6"
+                    },
+                    {
+                        "user": {
+                            "url": "https://picsum.photos/500/700",
+                            "USER_NAME": "y_as_er_T_U.."
+                        },
+                        "COMMENT": "orem ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligendi, esse exercitationem aliquid possimus quod dignissimos? Delectus dolore ",
+                        "timestamp": "1699430228768",
+                        "replays": [
+                            {
+                                "user": {
+                                    "url": "https://picsum.photos/500/700",
+                                    "USER_NAME": "y_as_er_T_U.."
+                                },
+                                "REPLY": " ipsum dolor sit amet consectetur adipisicing elit. Ut rerum id, cum atque quibusdam debitis officiis eligend ",
+                                "timestamp": "1699430228768",
+                                "_id": "654b3f54090f8f1f2ffe2fa9"
+                            }
+                        ],
+                        "_id": "654b3f54090f8f1f2ffe2fa8"
+                    }
+                ],
+                "_id": "654b3f54090f8f1f2ffe2fa3",
+                "Like": [""]
+            }
+        ],
+        "REELS": [
+            {
+                "reelInfo": {
+                    "postedBy": {
+                        "avatar": "https://picsum.photos/200/300",
+                        "name": "y_as_er_T_U.."
+                    },
+                    "likes": {
+                        "count": 55
+                    },
+                    "dislikes": {
+                        "count": 5
+                    },
+                    "comments": {
+                        "count": 22
+                    },
+                    "shares": {
+                        "count": 55
+                    },
+                    "url": "https://storage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+                    "description": "this is tha best reels"
+                },
+                "_id": "654b3f54090f8f1f2ffe2faa"
+            }
+        ],
+        "createdAt": "2023-11-08T07:57:08.824Z",
+        "updatedAt": "2023-11-18T19:22:12.034Z",
+        "__v": 0
+    }
+]

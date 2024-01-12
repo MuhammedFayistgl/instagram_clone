@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Reels from './ReelsComponent'
 import Footer from '../../components/Footer/Footer'
 

@@ -8,6 +8,7 @@ import Cookies from "universal-cookie";
 import SidebarLayout from "../../components/SaidBar/SidebarLayout";
 import SuggestedRoot from "../../components/SuggestedList/SuggestedRoot";
 import { useWindowSize } from "@react-hook/window-size";
+import { RootState } from "../../types/Type";
 
 type PrivetRouteProps = {
     children?: ReactNode;
@@ -16,8 +17,8 @@ const PrivetRoute: React.FC<PrivetRouteProps> = (Props) => {
     const [width] = useWindowSize();
     
     const cookies = new Cookies(null, { path: "/" });
-    const { user } = useSelector((state) => state);
-
+    const { user } = useSelector((state:RootState) => state);
+   
     const Dispatch = useDispatch();
     const navigate = useNavigate();
     const observerUser = async () => {

@@ -4,12 +4,15 @@ import moment from "moment";
 import StoryProfile from "../Story/StoryProfile";
 import { ReplaysEntity } from "../../types/FeedType";
 import UserName from "../newComp/UserName/UserName";
+import { useSelector } from "react-redux";
+import { RootState } from "../../types/Type";
 
 type ReplaysDataProps = {
     replayData: ReplaysEntity[] | undefined | null;
 };
 
 const Reply: React.FC<ReplaysDataProps> = ({ replayData }) => {
+    const { user } = useSelector((state: RootState) => state.userDataSlice.Details);
     const [Toggle, setToggle] = useState<boolean>(false);
     return (
         <>
@@ -26,6 +29,7 @@ const Reply: React.FC<ReplaysDataProps> = ({ replayData }) => {
                             className="flex  w-[100%] justify-between px-2 ">
                             <span className="flex flex-row gap-2 ">
                                 <StoryProfile
+                                    uid={user?.uid}
                                     storyview
                                     Profil_Url={itm?.user?.url}
                                     Size="sm"

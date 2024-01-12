@@ -16,7 +16,7 @@ const ListSettings = () => {
                     title: "Are you sure?",
                     text: "Once deleted, you will not be able to recover this imaginary file!",
                     icon: "warning",
-                    buttons: true,
+        //    buttons: [true],
                     dangerMode: true,
                 }).then((willLogOut) => {
                     if (willLogOut) {
@@ -45,14 +45,8 @@ const ListSettings = () => {
                     type: "success",
                     insert: "top",
                     container: "top-right",
-                    animationIn: [
-                        "animate__animated",
-                        "animate__fadeIn",
-                    ],
-                    animationOut: [
-                        "animate__animated",
-                        "animate__fadeOut",
-                    ],
+                    animationIn: ["animate__animated", "animate__fadeIn"],
+                    animationOut: ["animate__animated", "animate__fadeOut"],
                     dismiss: {
                         duration: 5000,
                         onScreen: true,
@@ -70,15 +64,9 @@ const ListSettings = () => {
             {List.map((itm) => {
                 return (
                     <div className="ml-3">
-                        <div
-                            onClick={itm?.onclick}
-                            className="flex gap-4 items-center">
-                            <span className="text-3xl">
-                                {itm?.icon}
-                            </span>
-                            <span className="text-lg">
-                                {itm?.value}
-                            </span>
+                        <div onClick={itm?.onclick} className="flex gap-4 items-center">
+                            <span className="text-3xl">{itm?.icon}</span>
+                            <span className="text-lg">{itm?.value}</span>
                         </div>
                     </div>
                 );

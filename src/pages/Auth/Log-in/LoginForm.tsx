@@ -18,9 +18,7 @@ const LoginForm = () => {
     const Dispatch = useDispatch();
     const cookies = new Cookies(null, { path: "/" });
 
-    const [individualData, setindivdualData] = useState<FormDataType>(
-        {}
-    );
+    const [individualData, setindivdualData] = useState<FormDataType>({email:'',Password:''});
 
     const submitHandler = async () => {
         const { Password, email } = individualData;

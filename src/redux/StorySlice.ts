@@ -1,12 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const state = false
+const state = { isOpen: false, value: [] };
 const StorySlice = createSlice({
     name: "StorySlice",
-    initialState: { value: state },
+    initialState: state,
     reducers: {
-        setShowStory: (state) => {
-            state.value = !state.value;
+        setShowStory: (state, action) => {
+            state.isOpen = !state.isOpen;
+            state.value = action.payload && state.isOpen ?  action.payload : [];
         },
     },
 });

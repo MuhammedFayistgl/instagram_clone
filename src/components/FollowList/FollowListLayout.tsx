@@ -7,7 +7,7 @@ const FollowListLayout = () => {
         <div className="flex justify-around mt-2">
             <div className="flex gap-3">
                 <span>
-                    <StoryProfile storyview Size="md" />
+                    <StoryProfile storyview Size="md" uid={''} />
                 </span>
                 <span>
                     <UserName userNameIs="dummy"/>

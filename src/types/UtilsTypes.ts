@@ -7,7 +7,3 @@ export type ImagelistProps = {
 }
 
 
-export type stateStoryProfileType = {
-    open: boolean;
-    dataID: string | undefined;
-};

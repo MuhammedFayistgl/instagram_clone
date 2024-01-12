@@ -44,6 +44,7 @@ export type ProfilePropsType = {
     storyview: boolean;
     Name?: boolean;
     statusSlide?: boolean;
+    uid:string
 };
 
 export type ReelMetaInfoType = {

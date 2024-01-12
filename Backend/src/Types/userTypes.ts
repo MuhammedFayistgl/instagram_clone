@@ -42,7 +42,7 @@ export interface AllStoryDataType {
     user: string;
     STORY: STORY[];
   }
-  interface STORY {
+ export interface STORY {
     header: Header;
     url: string;
     duration: number;
