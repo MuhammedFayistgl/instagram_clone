@@ -28,7 +28,7 @@ const Layout = () => {
         <HashRouter>
             
             <>
-                <div className="flex flex-col h-[100%] overflow-hidden justify-between">
+                <div className="flex flex-col  justify-between">
                         <SlideRoutes>
                             <Route
                                 path="/chat"

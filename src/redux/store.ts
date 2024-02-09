@@ -4,6 +4,8 @@ import userSlice from "./userSlice";
 import StorySlice from "./StorySlice";
 import userDataSlice from "./userDataSlice";
 import publicFeedsSlice from "./publicFeedsSlice";
+import ChatSlice from "./ChatSlice";
+// import socketSlice from "./socketSlice";
 
 export const Store = configureStore({
     reducer: {
@@ -12,5 +14,7 @@ export const Store = configureStore({
         story: StorySlice,
         userDataSlice,
         publicFeedsSlice,
+        ChatSlice,
+        // socketSlice
     },
 });

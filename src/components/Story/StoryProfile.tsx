@@ -15,7 +15,6 @@ const StoryProfile = ({ Profil_Url, alt, Size, storyview, Name, statusSlide, uid
     const Dispatch = useDispatch();
 
     const activeStoryFetch = async () => {
-        
         if (loadingID) {
             try {
                 getAxiosinstance
@@ -35,7 +34,7 @@ const StoryProfile = ({ Profil_Url, alt, Size, storyview, Name, statusSlide, uid
         if (!story) {
             getAxiosinstance("/instagram-random-story").then((data) => setStory(data.data));
         }
-    }, [ story, statusSlide]);
+    }, [story, statusSlide]);
 
     const size = {
         width: Size === "sm" ? 24 : Size === "md" ? 40 : Size === "lg" ? 56 : Size === "xl" ? 70 : 56,
@@ -60,6 +59,5 @@ const StoryProfile = ({ Profil_Url, alt, Size, storyview, Name, statusSlide, uid
         </div>
     );
 };
-const StoriesProfileMemo = memo(StoryProfile)
-export default StoriesProfileMemo
-
+const StoriesProfileMemo = memo(StoryProfile);
+export default StoriesProfileMemo;

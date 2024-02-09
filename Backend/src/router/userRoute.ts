@@ -2,7 +2,8 @@
 import { Request, Response, Router } from "express";
 import userSchema from "../schema/userSchema";
 import mongoose from "mongoose";
-
+import moment from "moment";
+import { getUID } from "../utils/userUtility";
 const Route = Router();
 
 Route.get("/", (req, res) => {
@@ -707,45 +708,37 @@ Route.post("/upload", async (req, res) => {
 });
 
 Route.get("/instagram-random-feed", async (req, res) => {
-    const data = await userSchema
-        .find()
-        .then((doc) =>
-            doc.map((user) => {
-                return { user: user.user, feed: user.feed };
-            })
-        )
-        .then((doc) => doc.reverse());
-
-    res.send(data);
+    await userSchema
+        .aggregate([
+            {
+                $project: {
+                    feed: "$feed",
+                    user: "$user",
+                    _id: 0,
+                },
+            },
+        ])
+        .then((array) => res.send(array));
 });
 
 Route.get("/instagram-random-story", async (req, res) => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const array: any = [];
-    await userSchema.find().then((doc) => {
-        doc.forEach((feed) => {
-            array.push({
-                user: feed?.user?.uid,
-                STORY: [
-                    feed?.STORY?.map((doc) => {
-                        return {
-                            header: {
-                                heading: feed?.user?.USER_NAME,
-                                subheading: doc?.header?.subheading,
-                                profileImage: feed?.user?.url,
-                            },
-                            url: doc?.url,
-                            duration: doc?.duration,
-                            seeMore: doc?.seeMore,
-                            _id: doc?._id,
-                        };
-                    }),
-                ],
-            });
-        });
-    });
-    res.send(array);
-    // console.log(array);
+    await userSchema
+        .aggregate([
+            {
+                $project: {
+                    header: {
+                        heading: "$user.USER_NAME",
+                        subheading: moment(new Date()).fromNow(),
+                        profileImage: "$user.url",
+                    },
+                    url: "$Stories",
+                    duration: "$STORY.duration",
+                    seeMore: "seeMore",
+                    _id: new mongoose.Types.ObjectId(),
+                },
+            },
+        ])
+        .then((array) => res.send(array));
 });
 Route.get("/instagram-random-story-only-status-view", async (req, res) => {
     try {
@@ -777,11 +770,11 @@ Route.post("/instagram-random-story-only-status-with-id", async (req: Request, r
             $project: {
                 header: {
                     heading: "$user.USER_NAME",
-                    subheading: "posted 30s ago",
+                    subheading: moment(new Date()).fromNow(),
                     profileImage: "$user.url",
                 },
                 url: "$Stories",
-                duration: 5000,
+                duration: "$STORY.duration",
                 seeMore: "seeMore",
                 _id: new mongoose.Types.ObjectId(),
             },
@@ -797,7 +790,9 @@ Route.get("/instagram-random-reel", async (req, res) => {
     res.send(REELS);
 });
 Route.get("/instagram-user-on-feeds", async (req, res) => {
-    const uid = req?.headers?.authorization?.split(" ")[1];
+    const tokenHeader = req.headers["authorization"];
+    const uid = tokenHeader && tokenHeader.split(" ")[1];
+    if (!uid) return res.sendStatus(401).json("uid not found");
     try {
         const userinformation = await userSchema.aggregate([
             {
@@ -819,7 +814,9 @@ Route.get("/instagram-user-on-feeds", async (req, res) => {
     }
 });
 Route.get("/instagram-user", async (req, res) => {
-    const uid = req?.headers?.authorization?.split(" ")[1];
+    const tokenHeader = req.headers["authorization"];
+    const uid = tokenHeader && tokenHeader.split(" ")[1];
+    if (!uid) return res.sendStatus(401).json("uid not found");
     const user = await userSchema.aggregate([
         {
             $match: {
@@ -898,7 +895,11 @@ Route.post(
 );
 
 Route.get("/get-my-username", async (req, res) => {
-    const uid = req?.headers?.authorization?.split(" ")[1];
+
+    const tokenHeader = req.headers["authorization"];
+    const uid = tokenHeader && tokenHeader.split(" ")[1];
+
+    if (!uid) return res.sendStatus(401).json("uid not found");
     const userName = await userSchema
         .findOne({
             "user.uid": { $in: uid },
@@ -907,4 +908,27 @@ Route.get("/get-my-username", async (req, res) => {
 
     res.send(userName);
 });
+
+Route.post("/get-users-chat", async (req: Request, res: Response) => {
+    const uid = getUID(req, res);
+    if (!uid) return res.sendStatus(401).json("uid not found");
+
+    // const users = await userSchema.aggregate([
+    //     {
+    //         $match: {
+    //             "user.uid": {
+    //                 $ne: uid,
+    //             },
+    //         },
+    //     },
+    //     {
+    //         $project: {
+    //             _id: 0,
+    //             user: "$user",
+    //         },
+    //     },
+    // ]);
+    // res.send(users);
+});
+
 export default Route;

@@ -10,6 +10,8 @@ import axios from "axios";
 import { useQuery } from "react-query";
 import { getData } from "./utils/getData";
 import { getUserFeeds, setUserData } from "./redux/userDataSlice";
+// import { setSocket } from "./redux/socketSlice";
+// import socket from "./config/socket";
 
 function App() {
     const Dispatch = useDispatch();
@@ -26,6 +28,12 @@ function App() {
             Dispatch(getUserFeeds(res.data));
         })
     );
+
+    //  initialing socket io  globally
+    // useEffect(() => {
+    //     Dispatch(setSocket(socket));
+    // }, [Dispatch]);
+
     return (
         <>
             <CustomProvider theme={value ? "dark" : "light"}>

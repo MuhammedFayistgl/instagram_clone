@@ -14,6 +14,8 @@ type ReplaysDataProps = {
 const Reply: React.FC<ReplaysDataProps> = ({ replayData }) => {
     const { user } = useSelector((state: RootState) => state.userDataSlice.Details);
     const [Toggle, setToggle] = useState<boolean>(false);
+
+    
     return (
         <>
             <div

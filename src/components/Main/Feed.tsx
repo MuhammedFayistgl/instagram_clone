@@ -49,7 +49,7 @@ const Feed: React.FC = () => {
             Dispatch(setAllPublicFeedData(res.data));
         })
     );
-    console.log("value", value);
+
     return (
         <div className="flex flex-col items-center pt-5 relative">
             {value ? (

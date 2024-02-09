@@ -1,0 +1,59 @@
+{
+    "chatName": "test",
+    "isGroupChat": false,
+    "users": [{"id":"Court","name":"Melosa Boffin","email":"mboffin0@typepad.com"},{"id":"Alley","name":"Minerva Lovemore","email":"mlovemore1@unesco.org"}],
+    "latestMessage": {
+        "id": "1",
+        "sender": "Court",
+        "text": "hello",
+        "timestamp": "2014-04-17T12:00:00.000Z"
+    },
+    "groupAdmin": {
+        "id": "Court",
+        "name": "<NAME>",
+        "email": "mboffin0@typepad.com"
+    },
+    "chat": [{
+        "id": "1",
+        "sender": "Court",
+        "text": "hello",
+        "timestamp": "2014-04-17T12:00:00.000Z"
+    }, {
+        "id": "2",
+        "sender": "Alley",
+        "text": "hello",
+        "timestamp": "2014-04-17T12:00:00.000Z"
+    },
+    {
+        "id": "3",
+        "sender": "Court",
+        "text": "hello",
+        "timestamp": "2014-04-17T12:00:00.000Z"
+    },
+    {
+        "id": "4",
+        "sender": "Alley",
+        "text": "hello",
+        "timestamp": "2014-04-17T12:00:00.000Z"
+    },
+    {
+        "id": "5",
+        "sender": "Court",
+        "text": "hello",
+        "timestamp": "2014-04-17T12:00:00.000Z"
+    },
+    {
+        "id": "6",
+        "sender": "Alley",
+        "text": "hello",
+        "timestamp": "2014-04-17T12:00:00.000Z"
+    },
+    {
+        "id": "7",
+        "sender": "Court",
+        "text": "hello",
+        "timestamp": "2014-04-17T12:00:00.000Z"
+    }
+
+]
+}

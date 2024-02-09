@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect } from "react";
+import React, { ReactNode, useCallback, useEffect } from "react";
 import { auth } from "../../config/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { Navigate, useNavigate } from "react-router-dom";
@@ -13,20 +13,24 @@ import { RootState } from "../../types/Type";
 type PrivetRouteProps = {
     children?: ReactNode;
 };
-const PrivetRoute: React.FC<PrivetRouteProps> = (Props) => {
+
+
+const PrivetRoute: React.FC<PrivetRouteProps> = (props) => {
     const [width] = useWindowSize();
-    
-    const cookies = new Cookies(null, { path: "/" });
-    const { user } = useSelector((state:RootState) => state);
-   
-    const Dispatch = useDispatch();
+
+    const { user } = useSelector((state: RootState) => state.user);
+
+    const dispatch = useDispatch();
     const navigate = useNavigate();
-    const observerUser = async () => {
+
+    const observerUser = useCallback(async () => {
+        const cookies = new Cookies(null, { path: "/" });
+
         try {
             onAuthStateChanged(auth, (user) => {
                 if (user) {
                     const uid = user.uid;
-                    Dispatch(setUser(uid));
+                    dispatch(setUser(uid));
                     cookies.set("uid", user.uid);
                     // console.log("uid", uid);
                     localStorage.setItem("uid", uid);
@@ -41,33 +45,31 @@ const PrivetRoute: React.FC<PrivetRouteProps> = (Props) => {
         }
 
         // ...
-    };
+    }, [dispatch, navigate]);
+
     useEffect(() => {
-        if (!user?.user) {
+        if (!user) {
             observerUser();
         }
-    }, []);
+    }, [user, observerUser]);
 
     observerUser();
 
     if (localStorage.getItem("uid")) {
         return (
             <>
-                {width > 412 ? (
+                {width > 768 ? (
                     <div className="flex flex-row ">
-                        <div className="w-[20%] ">
+                        <div className="w-[20%] overflow-scroll">
                             <SidebarLayout />
                         </div>
-                        <span className="w-[50%]">
-                            {" "}
-                            {Props.children}
-                        </span>
-                        <div className="w-[30%]">
+                        <span className="w-[50%] "> {props.children}</span>
+                        <div className="w-[30%] overflow-scroll">
                             <SuggestedRoot />
                         </div>
                     </div>
                 ) : (
-                    <>{Props.children}</>
+                    <>{props.children}</>
                 )}
             </>
         );
@@ -77,3 +79,5 @@ const PrivetRoute: React.FC<PrivetRouteProps> = (Props) => {
 };
 
 export default PrivetRoute;
+
+

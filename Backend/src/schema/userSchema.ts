@@ -4,76 +4,45 @@ import { model, Schema } from "mongoose";
 const UserSchema = new Schema(
     {
         user: {
-            url: String,
-            USER_NAME: String,
-            uid: String,
+            url: {
+                type: String,
+                default: "",
+            },
+            USER_NAME: {
+                type: String,
+                default: "",
+            },
+            uid: {
+                type: String,
+                default: "",
+            },
+            Followers: {
+                type: Number,
+                default: 0,
+            },
+            Following: {
+                type: Number,
+                default: 0,
+            },
+            description: {
+                type: String,
+                default: "",
+            },
         },
 
-        STORY: [
-            {
-                url: String,
-                duration: Number,
-                seeMore: String,
-                _id: Schema.ObjectId,
-                header: {
-                    heading: String,
-                    subheading: String,
-                    profileImage: String,
-                },
-            },
-        ],
+        STORY: {
+            type: Schema.Types.ObjectId,
+            ref: "Stories",
+        },
 
-        feed: [
-            {
-                FEED_URL: String,
-                _id: String,
-                timestamp: String,
-                comments: [
-                    {
-                        user: { url: String, USER_NAME: String },
-
-                        COMMENT: String,
-                        timestamp: String,
-
-                        replays: [
-                            {
-                                user: {
-                                    url: String,
-                                    USER_NAME: String,
-                                },
-                                REPLY: String,
-                                timestamp: String,
-                            },
-                        ],
-                    },
-                ],
-            },
-        ],
-
-        REELS: [
-            {
-                reelInfo: {
-                    url: String,
-                    description: String,
-                    postedBy: {
-                        avatar: String,
-                        name: String,
-                    },
-                    likes: {
-                        count: Number,
-                    },
-                    dislikes: {
-                        count: Number,
-                    },
-                    comments: {
-                        count: Number,
-                    },
-                    shares: {
-                        count: Number,
-                    },
-                },
-            },
-        ],
+        feed: {
+            type: Schema.Types.ObjectId,
+            ref: "Feed",
+        },
+        REELS: {
+            type: Schema.Types.ObjectId,
+            ref: "Reels",
+        },
     },
     { timestamps: true }
 );

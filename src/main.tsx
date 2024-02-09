@@ -12,6 +12,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <Provider store={Store}>
         <QueryClientProvider client={queryClient}>
             <App />
+           
         </QueryClientProvider>
     </Provider>
 );
