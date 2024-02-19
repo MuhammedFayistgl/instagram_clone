@@ -913,22 +913,22 @@ Route.post("/get-users-chat", async (req: Request, res: Response) => {
     const uid = getUID(req, res);
     if (!uid) return res.sendStatus(401).json("uid not found");
 
-    // const users = await userSchema.aggregate([
-    //     {
-    //         $match: {
-    //             "user.uid": {
-    //                 $ne: uid,
-    //             },
-    //         },
-    //     },
-    //     {
-    //         $project: {
-    //             _id: 0,
-    //             user: "$user",
-    //         },
-    //     },
-    // ]);
-    // res.send(users);
+    const users = await userSchema.aggregate([
+        {
+            $match: {
+                "user.uid": {
+                    $ne: uid,
+                },
+            },
+        },
+        {
+            $project: {
+                _id: 0,
+                user: "$user",
+            },
+        },
+    ]);
+    res.send(users);
 });
 
 export default Route;
