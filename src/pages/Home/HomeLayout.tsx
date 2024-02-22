@@ -13,12 +13,11 @@ const HomeLayout = () => {
         <>
             <Container>
                 <Header />
-                <StoryProfile uid={memoData} storyview Name statusSlide />
+                <StoryProfile uid={memoData} storyview Name statusSlide Size="xl" />
             </Container>
             <Feed />
-            <Container>
-                <Footer />
-            </Container>
+
+            <Footer />
         </>
     );
 };

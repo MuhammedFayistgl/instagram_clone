@@ -1,6 +1,6 @@
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import 'react-lazy-load-image-component/src/effects/blur.css';
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 type ImgLazyloadingProps = {
     src: string;
@@ -8,9 +8,7 @@ type ImgLazyloadingProps = {
     height: string | number;
     width: string | number;
 };
-const ImgLazyloading: React.FunctionComponent<
-    ImgLazyloadingProps
-> = ({ src, alt, height, width }) => {
+const ImgLazyloading: React.FunctionComponent<ImgLazyloadingProps> = ({ src, alt, height, width }) => {
     return (
         <>
             <LazyLoadImage
@@ -19,6 +17,7 @@ const ImgLazyloading: React.FunctionComponent<
                 src={src} // use normal <img> attributes as props
                 width={width}
                 effect="blur"
+                style={{ width: "fit-content" }}
             />
         </>
     );

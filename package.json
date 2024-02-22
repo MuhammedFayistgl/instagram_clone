@@ -29,6 +29,7 @@
     "react-icons": "^4.11.0",
     "react-insta-stories": "^2.6.2",
     "react-lazy-load-image-component": "^1.6.0",
+    "react-loading-skeleton": "^3.4.0",
     "react-notifications-component": "^4.0.1",
     "react-query": "^3.39.3",
     "react-redux": "^8.1.3",

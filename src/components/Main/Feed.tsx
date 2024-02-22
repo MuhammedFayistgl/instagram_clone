@@ -4,7 +4,7 @@ import { FaRegCommentDots } from "react-icons/fa";
 import { ButtonToolbar, Panel, Stack } from "rsuite";
 import ThumbButton from "./Feed_Fun/ThumbButton";
 import CommentsContainer from "../Comments/CommentsContainer";
-import React, { memo, useState } from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import { Container, SwipeableDrawer } from "@mui/material";
 
@@ -51,7 +51,7 @@ const Feed: React.FC = () => {
     );
 
     return (
-        <div className="flex flex-col items-center pt-5 relative">
+        <div className="flex flex-col items-center pt-5 relative ">
             {value ? (
                 value
                     ?.map((data: FeedData) => {
@@ -76,13 +76,16 @@ const Feed: React.FC = () => {
                                         padding: 0,
                                     }}>
                                     <Slider {...settings}>
-                                        <ImgLazyloading width={"100%"} height={""} src={FEED_URL} alt={"image-placeholder"} />
+                                        <ImgLazyloading width={"90%"} height={""} src={FEED_URL} alt={"image-placeholder"} />
                                     </Slider>
                                     <Container>
                                         <Stack className="">
                                             <ButtonToolbar className="pt-3">
                                                 <span className="text-lg ">
-                                                    <ThumbButton uid={currentUser?.uid} targetID={_id} />
+                                                    <ThumbButton
+                                                    // uid={currentUser?.uid}
+                                                    //  targetID={_id}
+                                                    />
                                                 </span>
                                                 <span className="text-lg">
                                                     <FiSend />
@@ -132,7 +135,12 @@ const Feed: React.FC = () => {
                 <MYSkeleton />
             )}
         </div>
+        //     <>
+        //         <div>
+        //             <MYSkeleton />
+        //         </div>
+        //     </>
     );
 };
-const feedMemo = memo(Feed);
-export default feedMemo;
+
+export default Feed;

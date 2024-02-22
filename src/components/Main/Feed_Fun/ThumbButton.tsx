@@ -1,27 +1,29 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { Rate } from "rsuite";
-import { getAxiosinstance } from "../../../utils/getAxiosinstance";
-type likeProps = {
-    targetID: string | undefined;
-    uid: string | undefined;
-};
-const ThumbButton = ({ targetID,uid }: likeProps) => {
+
+// type likeProps = {
+//     targetID: string | undefined;
+//     uid: string | undefined;
+// };
+const ThumbButton = (
+    // { targetID,uid }: likeProps
+    ) => {
     const [Like, setlike] = useState(0);
     console.log(Like);
 
-    useEffect(() => {
-        if (Like === 1) {
-            getAxiosinstance.post("/instagram-user-like", {
-                uid:uid,
-                targetID: targetID,
-            });
-        }else{
-            getAxiosinstance.post("/instagram-user-Unlike", {
-                uid:uid,
-                targetID: targetID,
-            }); 
-        }
-    }, [Like , uid, targetID]);
+    // useEffect(() => {
+    //     if (Like === 1) {
+    //         getAxiosinstance.post("/instagram-user-like", {
+    //             uid:uid,
+    //             targetID: targetID,
+    //         });
+    //     }else{
+    //         getAxiosinstance.post("/instagram-user-Unlike", {
+    //             uid:uid,
+    //             targetID: targetID,
+    //         }); 
+    //     }
+    // }, [Like , uid, targetID]);
 
     return (
         <span>

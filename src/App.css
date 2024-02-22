@@ -432,15 +432,15 @@ span.language {
 /* stories animation */
 .stories-animation-container {
     position: relative;
-    width: 55px;
-    height: 55px;
+    width: 75px;
+    height: 75px;
 }
 .stories-animation {
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     position: absolute;
     border-radius: 50%;
-    width: 55px;
-    height: 55px;
+    width: 75px;
+    height: 75px;
 
     transition: all 100s;
 }
@@ -452,8 +452,9 @@ span.language {
 }
 .stories-animation-image {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    /* top: 0%; */
+    /* left: 0%; */
+    /* right: 0; */
 
     transform: translate(-50%, -50%);
 }
@@ -477,3 +478,6 @@ span.language {
         transform: rotate(0deg);
     }
 }
+
+
+

@@ -13,27 +13,21 @@ import { useNavigate } from "react-router-dom";
 const SidebarLayout: React.FC = () => {
     const Navigation = useNavigate();
 
-    
     return (
-        <div className="overflow-y-scroll fixed w-[20%] h-full">
+        <div className="w-[180px]">
             <Container>
-                {SideData?.map((data) => {
-                    return (
-                        <div
-                            key={data?.id}
-                            className="flex flex-row "
-                            onClick={() =>
-                                Navigation(`${data?.onclickUri}`)
-                            }>
-                            <span className=" cursor-pointer text-[25px] pr-3 pt-6">
-                                {data?.icon}
-                            </span>
-                            <span className=" cursor-pointer text-[18px] pt-6">
-                                {data?.label}
-                            </span>
-                        </div>
-                    );
-                })}
+                <div className="relative ">
+                    <div className="fixed">
+                        {SideData?.map((data) => {
+                            return (
+                                <div key={data?.id} className="flex flex-row  " onClick={() => Navigation(`${data?.onclickUri}`)}>
+                                    <span className=" cursor-pointer text-[25px] pr-3 pt-6">{data?.icon}</span>
+                                    <span className=" cursor-pointer text-[18px] pt-6">{data?.label}</span>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
             </Container>
         </div>
     );
@@ -87,7 +81,7 @@ const SideData = [
     {
         id: 983546,
         label: "Profile",
-        icon: <StoryProfile uid={''} Size="sm" storyview={false}  />,
+        icon: <StoryProfile uid={""} Size="sm" storyview={false} />,
         onclickUri: "/profile",
     },
 ];

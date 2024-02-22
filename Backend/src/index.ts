@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import cors from "cors";
 import "dotenv/config";
 import { connectDB } from "./config/server";
@@ -15,17 +15,17 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:5173",
+        origin:[ "http://localhost:5173", "https://muhammedfayistgl.github.io",'https://instagram-server-jyei.onrender.com/'],
         credentials: true,
     },
 });
 
-app.use(cors({ credentials: true, origin: ["http://localhost:5173", "https://muhammedfayistgl.github.io"] }));
+app.use(cors({ credentials: true, origin: ["http://localhost:5173", "https://muhammedfayistgl.github.io",'https://instagram-server-jyei.onrender.com/'] }));
 app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(verifyToken); //middleware
-app.get("/", (req: Request, res: Response) => {
+app.get("/", (req, res) => {
     res.send("Hello, TypeScript Express!");
 });
 io.on("connection", () => {

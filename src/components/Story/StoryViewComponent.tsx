@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import Slider from "react-slick";
+
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Avatar } from "@mui/material";
 import { getAxiosinstance } from "../../utils/getAxiosinstance";
-import StorySkeleton from "../Skeleton/StorySkeleton";
+
 import { useDispatch } from "react-redux";
 import { setShowStory } from "../../redux/StorySlice";
 
@@ -25,55 +25,43 @@ const StoryViewComponent = ({ Name, size }: PropsType) => {
     const [data, setData] = useState<DataType[]>();
     const [loadingID, setLoadingID] = useState<string>();
 
-    const settings = {
-        dots: true,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        initialSlide: 0,
-        arrows: false,
-        centerMode: false,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    dots: false,
-                    infinite: false,
-                    speed: 500,
-                    slidesToShow: 10,
-                    slidesToScroll: 1,
-                    initialSlide: 0,
-                },
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 8,
-                    slidesToScroll: 1,
-                    initialSlide: 1,
-                    dots: false,
-                    rows: 1,
-                },
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 6,
-                    slidesToScroll: 1,
-                    dots: false,
-                },
-            },
-            {
-                breakpoint: 300,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                    dots: false,
-                },
-            },
-        ],
-    };
+    // const settings = {
+    //     dots: true,
+    //     infinite: false,
+    //     speed: 500,
+    //     slidesToShow: 4,
+    //     slidesToScroll: 4,
+    //     initialSlide: 0,
+       
+    //     responsive: [
+    //         {
+    //             breakpoint: 1024,
+    //             settings: {
+    //                 slidesToShow: 3,
+    //                 slidesToScroll: 3,
+    //                 infinite: true,
+    //                 dots: false,
+    //             },
+    //         },
+    //         {
+    //             breakpoint: 600,
+    //             settings: {
+    //                 slidesToShow: 2,
+    //                 slidesToScroll: 2,
+    //                 initialSlide: 2,
+    //                 dots: false,
+    //             },
+    //         },
+    //         {
+    //             breakpoint: 480,
+    //             settings: {
+    //                 slidesToShow: 1,
+    //                 slidesToScroll: 1,
+    //                 dots: false,
+    //             },
+    //         },
+    //     ],
+    // };
 
     useEffect(() => {
         if (!data) {
@@ -92,8 +80,8 @@ const StoryViewComponent = ({ Name, size }: PropsType) => {
                 getAxiosinstance
                     .post("/instagram-random-story-only-status-with-id", { id: loadingID })
                     .then((data) => {
-                        console.log('data==',data.data);
-                        
+                        console.log("data==", data.data);
+
                         Dispatch(setShowStory([data?.data[0]]));
                     })
                     .catch((err) => console.log(err));
@@ -102,9 +90,40 @@ const StoryViewComponent = ({ Name, size }: PropsType) => {
             }
         }
     };
+    const StoriesItems = data?.flat(1).map((itm) => {
+        return (
+            <div className="  pl-3 py-3" key={itm?._id}>
+                <span
+                    onClick={() => {
+                        if (itm.uid) {
+                            setLoadingID(itm?.uid), activeStoryFetch();
+                        }
+                    }}>
+                    <div className="stories-animation-container relative">
+                        <div className={` stories-animation ${loadingID === itm?._id && `stories-animation-toggle`}  `}></div>
+                        <span className="stories-animation-image relative">
+                            <Avatar src={itm?.url} sx={size} style={{ left: 2, top: 2 }} />
+                        </span>
+                    </div>
+                    {Name && <span className="">{itm?.name?.slice(0, 6)}</span>}
+                </span>
+            </div>
+        );
+    });
     return (
-        <div className="">
-            {data ? (
+        <div className=" ">
+            {/* <Slider {...settings}> */}
+            <div className="flex  overflow-y-scroll gap-2">
+            {StoriesItems}
+            {StoriesItems}
+            {StoriesItems}
+            {StoriesItems}
+            {StoriesItems}
+
+            </div>
+
+            {/* </Slider> */}
+            {/* {data ? (
                 <Slider {...settings}>
                     {data?.flat(1).map((itm) => {
                         return (
@@ -115,13 +134,13 @@ const StoryViewComponent = ({ Name, size }: PropsType) => {
                                             setLoadingID(itm?.uid), activeStoryFetch();
                                         }
                                     }}>
-                                    <div className="stories-animation-container">
+                                    <div className="stories-animation-container relative">
                                         <div
                                             className={` stories-animation ${
                                                 loadingID === itm?._id && `stories-animation-toggle`
                                             }  `}></div>
-                                        <span className="  stories-animation-image">
-                                            <Avatar src={itm?.url} sx={size} />
+                                        <span className="stories-animation-image relative">
+                                            <Avatar src={itm?.url} sx={size} style={{ left: 1, top: 1 }} />
                                         </span>
                                     </div>
                                     {Name && <span className="">{itm?.name?.slice(0, 6)}</span>}
@@ -129,10 +148,11 @@ const StoryViewComponent = ({ Name, size }: PropsType) => {
                             </div>
                         );
                     })}
+
                 </Slider>
             ) : (
                 <StorySkeleton />
-            )}
+            )} */}
         </div>
     );
 };

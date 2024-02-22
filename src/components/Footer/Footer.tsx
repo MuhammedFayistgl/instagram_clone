@@ -13,8 +13,8 @@ const Footer = () => {
     const Navigation = useNavigate();
     return (
         <LayoutFooter>
-            <div className=" fixed flex justify-between left-5 right-0  bottom-0  w-[90%] ">
-                <GrHomeRounded onClick={() => Navigation("/")} className=" text-2xl cursor-pointer" />
+            <div className="w-[90%] right-0 left-0 fixed bottom-0 flex justify-around">
+                <GrHomeRounded onClick={() => Navigation("/")} className="  cursor-pointer" />
                 <AiOutlineSearch onClick={() => Navigation("/search")} className=" text-2xl cursor-pointer" />
                 <AiOutlinePlaySquare className=" text-2xl cursor-pointer" onClick={() => Navigation("/reels")} />
                 <FcLike className=" text-2xl cursor-pointer" onClick={() => Navigation("/notification")} />

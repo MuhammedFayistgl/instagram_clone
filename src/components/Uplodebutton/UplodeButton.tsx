@@ -16,7 +16,7 @@ const UplodeButton = () => {
     });
     return (
         <>
-            <Button component="label" color='inherit'  startIcon={<BiMessageSquareAdd className={"text-2xl"} />}>
+            <Button component="label" color='inherit'  startIcon={<BiMessageSquareAdd className={"text-3xl"} />}>
                 <VisuallyHiddenInput type="file" />
             </Button>
         </>

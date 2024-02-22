@@ -2,11 +2,9 @@ import { AiOutlineCamera } from "react-icons/ai";
 import { Badge, Container } from "rsuite";
 import StorysProfile from "../../components/Story/StoryProfile";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 import { RootState } from "../../types/Type";
-import { useEffect } from "react";
-import { getAxiosinstance } from "../../utils/getAxiosinstance";
-import { setChatUserData } from "../../redux/ChatSlice";
+
 import { user } from "../../types/ProfileType";
 import { v4 as uuidv4 } from 'uuid';
 
@@ -16,10 +14,8 @@ type ChatUserType = {
 const Chat = () => {
     const { value } = useSelector((state: RootState) => state.ChatSlice);
     const Navigate = useNavigate();
-    const Dispatch = useDispatch();
-    useEffect(() => {
-        getAxiosinstance.post("/get-users-chat").then((data) => Dispatch(setChatUserData(data.data)));
-    }, [Dispatch]);
+  
+
 
     return (
         <div className="flex justify-center ">

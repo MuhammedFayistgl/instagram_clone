@@ -18,7 +18,7 @@ const LoginForm = () => {
     const Dispatch = useDispatch();
     const cookies = new Cookies(null, { path: "/" });
 
-    const [individualData, setindivdualData] = useState<FormDataType>({email:'',Password:''});
+    const [individualData, setindivdualData] = useState<FormDataType>({ email: "", Password: "" });
 
     const submitHandler = async () => {
         const { Password, email } = individualData;
@@ -30,10 +30,7 @@ const LoginForm = () => {
                 insert: "top",
                 container: "top-right",
                 animationIn: ["animate__animated", "animate__fadeIn"],
-                animationOut: [
-                    "animate__animated",
-                    "animate__fadeOut",
-                ],
+                animationOut: ["animate__animated", "animate__fadeOut"],
             });
         } else {
             await signInWithEmailAndPassword(auth, email, Password)
@@ -60,17 +57,9 @@ const LoginForm = () => {
                         message: errorMessage,
                         insert: "top",
                         container: "top-right",
-                        animationIn: [
-                            "animate__animated",
-                            "animate__fadeIn",
-                        ],
-                        animationOut: [
-                            "animate__animated",
-                            "animate__fadeOut",
-                        ],
+                        animationIn: ["animate__animated", "animate__fadeIn"],
+                        animationOut: ["animate__animated", "animate__fadeOut"],
                     });
-
-                    // ..
                 });
         }
     };
@@ -102,11 +91,7 @@ const LoginForm = () => {
                 />
             </div>
             <span className="button-box">
-                <Button
-                    onClick={submitHandler}
-                    appearance="primary"
-                    active
-                    block>
+                <Button onClick={submitHandler} appearance="primary" active block>
                     Log in
                 </Button>
             </span>
