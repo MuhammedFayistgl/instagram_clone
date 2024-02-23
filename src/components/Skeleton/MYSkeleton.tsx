@@ -10,7 +10,7 @@ import Skeleton from "@mui/material/Skeleton";
 
 function Media() {
     return (
-        <Card sx={{ mt: 2, backgroundColor: "gray" }}>
+        <Card sx={{  mt: 2, backgroundColor: "gray" }}>
             <CardHeader
                 avatar={<Skeleton animation="wave" variant="circular" width={40} height={40} />}
                 action={

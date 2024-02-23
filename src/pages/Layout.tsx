@@ -1,6 +1,5 @@
 import { lazy } from "react";
-import { HashRouter, Route } from "react-router-dom";
-import SlideRoutes from "react-slide-routes";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 import PublicRoute from "./Public-Route/PublicRoute";
 import PrivetRoute from "./Privet-Route/PrivetRoute";
@@ -26,13 +25,13 @@ const Layout = () => {
             <>
                 <div className="block">
                     <div className="">
-                        <div className="flex  justify-center gap-8 ">
+                        <div className="flex  justify-center  md:gap-8">
                             <div className="sm:block hidden  ">
                                 <SidebarLayout />
                             </div>
 
-                            <div className={" sm:max-w-[40%] w-[90%]  "}>
-                                <SlideRoutes>
+                            <div className={" sm:max-w-[40%] w-full md:w-[90%]  "}>
+                                <Routes>
                                     <Route
                                         path="/chat"
                                         element={
@@ -115,7 +114,7 @@ const Layout = () => {
                                             </PrivetRoute>
                                         }
                                     />
-                                </SlideRoutes>
+                                </Routes>
                             </div>
                             <div className="sm:block hidden">
                                 <SuggestedRoot />

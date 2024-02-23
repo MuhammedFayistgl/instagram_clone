@@ -51,7 +51,7 @@ const Feed: React.FC = () => {
     );
 
     return (
-        <div className="flex flex-col items-center pt-5 relative ">
+        <div>
             {value ? (
                 value
                     ?.map((data: FeedData) => {
@@ -65,8 +65,10 @@ const Feed: React.FC = () => {
                         // eslint-disable-next-line no-unsafe-optional-chaining
                         const { FEED_URL, _id, comments, Like = 0 } = data?.data;
                         const currentUser = data?.currentUser;
+
                         return (
                             <>
+                                <div className="flex flex-col items-center pt-5 relative "></div>
                                 <UserNameLayout User={currentUser} key={currentUser?.uid} />
                                 <Panel
                                     key={_id}
@@ -76,7 +78,7 @@ const Feed: React.FC = () => {
                                         padding: 0,
                                     }}>
                                     <Slider {...settings}>
-                                        <ImgLazyloading width={"90%"} height={""} src={FEED_URL} alt={"image-placeholder"} />
+                                        <ImgLazyloading width={"100%"} height={""} src={FEED_URL} alt={"image-placeholder"} />
                                     </Slider>
                                     <Container>
                                         <Stack className="">
@@ -128,18 +130,20 @@ const Feed: React.FC = () => {
                                         )}
                                     </Container>
                                 </Panel>
+                                <div />
                             </>
                         );
                     })
             ) : (
                 <MYSkeleton />
             )}
+
+            <>
+                <div>
+                    <MYSkeleton />
+                </div>
+            </>
         </div>
-        //     <>
-        //         <div>
-        //             <MYSkeleton />
-        //         </div>
-        //     </>
     );
 };
 
