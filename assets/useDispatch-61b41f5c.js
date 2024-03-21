@@ -1,0 +1,1 @@
+import{au as e,av as n,aw as c}from"./index-47f15509.js";function r(t=e){const o=t===e?n:c(t);return function(){const{store:s}=o();return s}}const a=r();function i(t=e){const o=t===e?a:r(t);return function(){return o().dispatch}}const p=i();export{p as u};
